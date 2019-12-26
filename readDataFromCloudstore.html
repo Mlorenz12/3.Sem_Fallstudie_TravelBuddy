@@ -1,0 +1,62 @@
+<html>
+	<head>
+		
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+		
+		
+		
+		
+		<script>
+			
+			//a jQuery function that is directly called using jQuery is registered to be started after the page has finished loading
+			$(function(){
+				start();
+				
+				});
+			
+		
+			function start()
+			{
+				getLogDataKeys();	
+			}
+			
+			//a function that retrieves a list of objects for owner logdata
+			function getLogDataKeys()
+			{
+				$.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=logdata",
+						  
+						  function(data)//this function is called when the server answers its data
+						  {
+							if (data.length>0)
+							{
+								$.each(data,
+									   function(index,logEntry){//this function is called for each single object in the array named "data" (listobjects and listkeays answer an array, while get does not!)
+											processLogEntry(logEntry);
+										});
+							}
+						  }
+							
+						 );
+			}
+			
+			//each logEntry is processed here
+			//process & aggregate the data here
+			function processLogEntry(aEntry)
+			{
+				console.log(aEntry);
+			}
+			
+			
+			
+			
+		</script>
+		
+		
+	</body>
+	
+	
+</html>
