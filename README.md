@@ -1,4 +1,4 @@
-# Tierheim
+# Travel-Buddy
 Fallstudien-Projekt
 
 ## Allgemeines
