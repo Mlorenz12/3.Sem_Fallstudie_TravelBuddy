@@ -83,16 +83,39 @@
           var passw = document.getElementById("password").value;
           var passwconf = document.getElementById("passwordconf").value;
           var mail = document.getElementById("email").value;
-            console.log(passw, passwconf, mail);
 
-          if (passw == passwconf) {
-            console.log(passw, passwconf, mail);
-            pruefen(mail, passw, "");
-            //window.location.href = 'Start.html';
+          $(".falsch").removeClass("falsch");
+
+          console.log(passw, passwconf, mail);
+
+          if (passw != passwconf) {
+            console.log("ungleich")
+            $("#password").addClass("falsch");
+            $("#passwordconf").addClass("falsch");
+          }
+
+          else if (mail == "") {
+            console.log("leere Mail")
+            $("#email").addClass("falsch");
+          }
+
+          else if (passw == "") {
+            console.log("leeres passwort")
+            $("#password").addClass("falsch");
+            $("#passwordconf").addClass("falsch");
+          }
+
+          else if (passw.length < 8) {
+            console.log("zu kurz fucker")
+            $("#password").addClass("falsch");
+            $("#passwordconf").addClass("falsch");
+            alert('Dein Passwort ist zu kurz, bitte mindestens 8 Zeichen');
           }
 
           else {
-            console.log("ungleich")
+            console.log(passw, passwconf, mail);
+            pruefen(mail, passw, "");
+            //window.location.href = 'Start.html';
           }
       }
 
@@ -112,7 +135,7 @@
                 //das eine ist ein json das andere ein string
                 if (keys['key'] === aMail){
                     schonda = "true"
-                    console.log("hast schon einen Account")
+                    console.log("hast schon einen Account fucker")
                 }
 							});
               

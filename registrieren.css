@@ -98,3 +98,7 @@ ul {
   width: 18%;
   align-self: center;
 }
+
+.falsch {
+  border-color: red;
+}
