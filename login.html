@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <title>Datenspeichern</title>
+    
+    <link rel="stylesheet" href="login.css">
+    
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-logo" href="#"><img src="pics/logo.jpg"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav mr-auto nav-fill w-100" style="font-size: large;">
+        <li class="nav-item"><a class="nav-link" href="#">Start</a></li>
+        <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="Findbefound.html">Find and be found</a></li>
+        <li class="nav-item"><a class="nav-link" href="Community.html">Community</a></li>
+        <li class="nav-item"><a class="nav-link" href="Help.html">Help</a></li>
+        <li class="nav-item konto"><a href="#"><img src="pics/login.png" class="loginpic"></a></li>
+      </ul>
+      
+    </div>
+</nav>
+        
+      <div class="container">
+      
+      <form action="" class="" >
+        <div class="row" style="width: inherit;">
+          <div class="col">
+            <h1 style="text-align: center; margin: 6mm;">Welcome to travelbuddy!</h1>
+          </div>
+        </div>
+        <div class="row pl-3 pr-3">
+          <input type="text" name="email" id="email" class="form-control reginput" placeholder="Your E-Mail" required>         
+        </div>
+        <div class="row pl-3 pr-3">
+          <input type="password" name="password" id="password" class="form-control reginput" style="margin-right: 5px" placeholder="Password (min. 8 characters)" required>  
+        </div>
+      </form>
+          <button class="submitreg" onClick="login()">Login</button>
+    </div>
+  </div>
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. 
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script> -->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  
+    <script>
+      function login() {
+        var e_mail = document.getElementById("email").value
+        var passwort = document.getElementById("password").value
+        var korrekt
+        console.log(e_mail, passwort)
+        
+        $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=bjoernsreise",function(response)
+						  {
+							$.each(response,function(index,data)
+							{
+                if (e_mail === data['key']){
+
+                  if (data['jsonstring']['login']['Passwort'] === passwort){
+                    korrekt = "true";
+                  }
+                }
+							});
+              
+              if (Boolean(korrekt)){
+                alert('Der Login war korrekt!')
+                //anmelden(e_mail)
+              }
+              else {
+                alert('Der Login war nicht korrekt!');
+              }
+              
+							
+							});
+      }
+    </script>
+</body>
+</html>
