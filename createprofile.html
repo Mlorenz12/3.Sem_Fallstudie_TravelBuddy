@@ -16,7 +16,7 @@
 
 <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-logo" href="#"><img src="pics/logo.jpg"></a>
+          <a class="navbar-logo logo" href="#"><img src="pics/logo.jpg"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -28,15 +28,22 @@
               <li class="nav-item"><a class="nav-link" href="Findbefound.html">Find and be found</a></li>
               <li class="nav-item"><a class="nav-link" href="Community.html">Community</a></li>
               <li class="nav-item"><a class="nav-link" href="Help.html">Help</a></li>
-              <li class="nav-item konto"><a href="login.html"><img src="pics/login.png" class="loginpic"></a></li>
+              <li class="nav-item konto">
+                
+                <a href="login.html"><img src="pics/login.png" class="loginpic"></a></li>
             </ul>
             
           </div>
       </nav>
       <div class="container">
+        <div class="row" style="width: inherit;">
+          <div class="col">
+            <h1>Tell us something about you</h1>
+          </div>
+        </div>
         <div class="row" >
-            <div class="col-lg-2" style="background-color: black;">
-                <input type="text" name="email" id="email" class="form-control reginput" style=" height: 5cm" placeholder="PLACEHOLDER" required>
+            <div class="col-lg-2">
+                <input type="text" name="email" id="email" class="form-control reginput" style=" height: 5cm; margin-top: .5cm;" placeholder="PLACEHOLDER" required>
             </div>
             <div class="col-lg-10">
                 <div class="row">
@@ -60,23 +67,34 @@
                     </div>              
                   </div>
                   <div class="row">
-                    <div class="col-lg-4">
-                        <label for="facebook">Any social media?</label>
-                      <input type="text" name="facebook" id="facebook" class="form-control reginput" required>  
-                    </div>
-                    <div class="col-lg-4 socmedabstand">
-                      <input type="text" name="instagram" id="instagram" class="form-control reginput" required>  
-                    </div>
-                    <div class="col-lg-4 socmedabstand">
-                        <input type="text" name="twitter" id="twitter" class="form-control reginput" required>  
+                    <div class="col-lg-4 pl-3" style="margin-top: 0.85%;">
+                      <label for="facebook">Any social media?</label>
+                      <div class="row pl-3">
+                        <img src="pics/fbicon.png" class="smicons" alt="Facebook-Logo">
+                        <input type="text" name="facebook" id="facebook" class="form-control reginput social">
                       </div>
+                    </div>
+                    <div class="col-lg-4 socmedabstand pl-3">
+                      <div class="row pl-3">
+                        <img src="pics/instaicon.png" class="smicons" alt="Facebook-Logo">
+                        <input type="text" name="instagram" id="instagram" class="form-control reginput social">    
+                      </div>
+                    </div>
+                    <div class="col-lg-4 socmedabstand pl-3">
+                      <div class="row pl-3">
+                        <img src="pics/twittericon.png" class="smicons" alt="Facebook-Logo">
+                        <input type="text" name="twitter" id="twitter" class="form-control reginput social">  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12 pl-3 pr-3">
+                      <label for="extra">Anything about your hobbies, travel experience, ...</label>
+                      <textarea name="extra" id="extra" style="min-width: 100%" rows="10" class="textfeld"></textarea>
+                    </div>
                   </div>
             </div>
         </div>
-    
-
-
-
       </div>
 
 
