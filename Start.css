@@ -104,7 +104,7 @@ ul {
 }
 
 .bg {
-        background-image: url(http://192.168.56.1:8080/HintergrundStart.jpg);
+        background-image: url(http://127.0.0.1:8080/HintergrundStart.jpg);
         opacity: 0.6;
         height: 50%; 
     
@@ -136,9 +136,44 @@ ul {
 
 .funktionen {
     margin-top: .8cm;
+    padding-left: 1cm;
+    padding-right: 1cm;
 }
 
 .fktbilder {
-    width: max-content;
-    height: max-content;
+    width: 100%;
 }
+
+p {
+  text-align: center;
+}
+
+.fkttext {
+  text-align: center;
+  height: max-content;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.noroad {
+  padding: 0;
+  margin-right: 0;
+  margin-left: 0;
+  padding-bottom: 4cm;
+}
+
+.fktcols {
+  padding-bottom: 1cm;
+  padding-left: 1cm;
+  padding-right: 1cm;
+}
+
+.carlaspain {
+  width: 100%;
+ }
+
+ .carlatext {
+  font-size: xxx-large;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-top: 20%; }
