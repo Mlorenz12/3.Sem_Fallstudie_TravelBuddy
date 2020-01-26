@@ -1,0 +1,26 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <script>
+            function save(){
+                document.cookie = "username=John Doe";
+                document.cookie = "language=Französisssch";
+            }
+            function rufen(){
+                var x = document.cookie;
+                console.log(x)
+            }
+
+            function getCookie() {
+                var decodedCookie = decodeURIComponent(document.cookie);
+                console.log(decodedCookie.split(';'));
+            }
+        </script>
+
+        <button onclick="save()">Save</button>
+        <button onclick="rufen()">Rufen</button>
+        <button onclick="getCookie()">getCookie</button>
+    </body>
+</html>
