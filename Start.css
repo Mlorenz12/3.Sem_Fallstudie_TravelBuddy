@@ -136,8 +136,8 @@ ul {
 
 .funktionen {
     margin-top: .8cm;
-    padding-left: 1cm;
-    padding-right: 1cm;
+    padding-left: 2cm;
+    padding-right: 2cm;
 }
 
 .fktbilder {
@@ -150,9 +150,8 @@ p {
 
 .fkttext {
   text-align: center;
-  height: max-content;
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 6px;
+  margin-bottom: 6px;
 }
 
 .noroad {
@@ -164,8 +163,8 @@ p {
 
 .fktcols {
   padding-bottom: 1cm;
-  padding-left: 1cm;
-  padding-right: 1cm;
+  padding-left: 1.2cm;
+  padding-right: 1.2cm;
 }
 
 .carlaspain {
