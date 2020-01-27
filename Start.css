@@ -41,19 +41,6 @@ ul {
     background-color: rgb(198, 227, 228);
 }
 
-.bg { 
-    /* The image used */
-    background-image: url("plane.jpg");
-
-    /* Full height */
-    height: 50%; 
-
-    /* Center and scale the image nicely */
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .verticalspace{
   width:100%;
   height:250px;
@@ -159,6 +146,8 @@ p {
   margin-right: 0;
   margin-left: 0;
   padding-bottom: 4cm;
+  text-align: center;
+  font-weight: bold;
 }
 
 .fktcols {
@@ -172,7 +161,7 @@ p {
  }
 
 .carlatext {
-font-size: 200%;
+font-size: 160%;
 padding-right: 20px;
 padding-left: 20px;
 margin-top: 20%;
