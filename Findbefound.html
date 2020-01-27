@@ -98,9 +98,9 @@
         </div>
         <div class="col-lg-4">
           <label for="gender">Preferred gender</label><br>
-          <input type="radio" name="gender" value="male" class="">Männlich</button>
-          <input type="radio" name="gender" value="female" class="">Weiblich</input>
-          <input type="radio" name="gender" value="div" class="">Divers</input>
+          <input type="radio" name="gender" id="gender" value="male" class="">Männlich</button>
+          <input type="radio" name="gender" id="gender" value="female" class="">Weiblich</input>
+          <input type="radio" name="gender" id="gender" value="div" class="">Divers</input>
         </div>
 
         <div class="col-lg-4">
@@ -140,21 +140,21 @@
 
     <script type="application/javascript">
       function suchen() {
-        var month = document.getElementById("montharriv").value //Format mit Jahr! zB 2020-02 (kann ich auch ändern, wie du willst)
-        var days = document.getElementById("days").value
-        var country = document.getElementById("country").value
-        var city = document.getElementById("city").value
-        var reiseart = document.getElementById("reiseart").value
-        var budget = document.getElementById("budget").value
-        var minalter = document.getElementById("minalter").value
-        var maxalter = document.getElementById("maxalter").value
-        var gender = document.getElementById("gender").value
-        var langu1 = document.getElementById("language1").value
-        var langu2 = document.getElementById("language2").value
+        var month = document.getElementById("montharriv").value; //Format mit Jahr! zB 2020-02 (kann ich auch ändern, wie du willst)
+        var days = document.getElementById("days").value;
+        var country = document.getElementById("country").value;
+        var city = document.getElementById("city").value;
+        var reiseart = document.getElementById("reiseart").value;
+        var budget = document.getElementById("budget").value;
+        var minalter = document.getElementById("minalter").value;
+        var maxalter = document.getElementById("maxalter").value;
+        var gender = document.getElementById("gender").value;
+        var langu1 = document.getElementById("language1").value;
+        var langu2 = document.getElementById("language2").value;
 
         console.log(month, days, country, city, reiseart, budget, minalter, maxalter)
       
-        //Achtung: Keinerlei Überprüfung! Kann ich noch einbauen
+        //Achtung: Keinerlei Überprüfung der Eingaben! Kann ich noch einbauen
         //Aber bitte nochmal absprechen
         
       }
