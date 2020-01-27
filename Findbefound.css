@@ -1,3 +1,22 @@
+.bg {
+    background-image: url(http://127.0.0.1:8080/HintergrundStart.jpg);
+    opacity: 0.4;
+    height: 50%; 
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.noroad {
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 4cm;
+    text-align: center;
+    font-weight: bold;
+  }
+
 li {
     color: black;
     float: left;
@@ -44,3 +63,127 @@ color: rgba(0, 0, 0, 0.69);
 width: 18%;
 align-self: center;
 }
+
+.travelicons {
+    width: 38px;
+    height: 38px;
+}
+
+.bildtext {
+    width: 80%;
+    margin-left: 5px;
+}
+
+input {
+    margin: 0;
+}
+label {
+    margin-top: .5cm;
+    margin-bottom: 0;
+}
+
+.socmedabstand {
+    margin-top: 1.35cm;
+}
+
+.textfeld {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   }
+
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid lightgrey;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  /*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: rgb(67, 157, 187) !important; 
+    color: #ffffff; 
+  }
+
+.suchen {
+      margin-top: 4%;
+      margin-bottom: 10%;
+  }
+
+
+/*AB HIER SLIDER*/
+section.range-slider {
+    position: relative;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+}
+
+section.range-slider input {
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 15px;
+    width: 200px;
+    outline: none;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+section.range-slider input::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+}
+
+section.range-slider input::-moz-range-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+    -moz-appearance: none;
+    width: 9px;
+}
+
+section.range-slider input::-moz-range-track {
+    position: relative;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 1);
+    border: 0;
+}
+section.range-slider input:last-of-type::-moz-range-track {
+    -moz-appearance: none;
+    background: none transparent;
+    border: 0;
+}
+  section.range-slider input[type=range]::-moz-focus-outer {
+  border: 0;
+}
+
