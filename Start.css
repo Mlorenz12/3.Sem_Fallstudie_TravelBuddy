@@ -172,8 +172,23 @@ p {
   width: 100%;
  }
 
- .carlatext {
-  font-size: xxx-large;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-top: 20%; }
+.carlatext {
+font-size: 200%;
+padding-right: 20px;
+padding-left: 20px;
+margin-top: 20%;
+margin-bottom: 20%;
+}
+
+.regformore {
+  font-weight: 500;
+  border-radius: 1cm;
+  color: darkcyan;
+  background-color: white;
+  border-color: darkcyan;
+  border-width: 2px;
+  padding: .3cm;
+  font-size: 100%;
+  display: block;
+  margin: auto auto;
+}
