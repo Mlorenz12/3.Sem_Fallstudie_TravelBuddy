@@ -1,6 +1,6 @@
 .bg {
-    background-image: url(http://127.0.0.1:8080/HintergrundStart.jpg);
-    opacity: 0.4;
+    /*  0.4 Bild!  */
+    background-image: url(http://192.168.56.1:8080/HintergrundStart.jpg);
     height: 50%; 
 
     background-position: center;
