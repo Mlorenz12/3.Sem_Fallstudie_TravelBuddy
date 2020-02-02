@@ -11,6 +11,31 @@
     
 
     <title>NOCHÄNDERN</title>
+    <style>
+      #Profilbild {
+        width: 100px;
+      }
+
+
+      .card-body {
+        border: black solid .5px;
+        border-radius: .1cm;
+        width: 500px;
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      .card-text {
+        text-align: left;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+    </style>
 
     <link rel="stylesheet" href="seachresults.css">
 
@@ -35,6 +60,7 @@
             
         </div>
     </nav>
+
     <div>
         <div class="row balken d-flex justify-content-center">
             <input type="month" name="montharriv" id="montharriv" class="form-control bildtext balkenoben">
@@ -69,19 +95,20 @@
             </div>
         </div>
     </div>
+            
+    <div>
+      <div id="container" class="container">
+        <div id="stage">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="row" id="divid">
 
-
-
-
-
-
-
-
-
-
-
-
-
+              </div>
+            </div><!-- gutter-column-->
+          </div><!--end of first row of animal cards-->
+        </div><!-- stage -->
+      </div><!-- container-->
+    </div>
 
 
 
@@ -147,155 +174,248 @@
                 }
             }
         }
-      </script>
-      <script> //AUTOCOMPLETE Länder
-        function autocompleteland(inp, arr) {
-          var currentFocus;
-          inp.addEventListener("input", function(e) {
-              var a, b, i, val = this.value;
-              closeAllLists();
-              if (!val) { return false;}
-              currentFocus = -1;
-              a = document.createElement("DIV");
-              a.setAttribute("id", this.id + "autocomplete-list");
-              a.setAttribute("class", "autocomplete-items");
-              this.parentNode.appendChild(a);
-              for (i = 0; i < arr.length; i++) {
-                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-                  b = document.createElement("DIV");
-                  b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-                  b.innerHTML += arr[i].substr(val.length);
-                  b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-                  b.addEventListener("click", function(e) {
-                      inp.value = this.getElementsByTagName("input")[0].value;
-                      closeAllLists();
-                  });
-                  a.appendChild(b);
-                }
-              }
-          });
-          inp.addEventListener("keydown", function(e) {
-              var x = document.getElementById(this.id + "autocomplete-list");
-              if (x) x = x.getElementsByTagName("div");
-              if (e.keyCode == 40) {
-                currentFocus++;
-                addActive(x);
-              } else if (e.keyCode == 38) { //up
-                currentFocus--;
-                addActive(x);
-              } else if (e.keyCode == 13) {
-                e.preventDefault();
-                if (currentFocus > -1) {
-                  if (x) x[currentFocus].click();
-                }
-              }
-          });
-          function addActive(x) {
-            /*a function to classify an item as "active":*/
-            if (!x) return false;
-            /*start by removing the "active" class on all items:*/
-            removeActive(x);
-            if (currentFocus >= x.length) currentFocus = 0;
-            if (currentFocus < 0) currentFocus = (x.length - 1);
-            x[currentFocus].classList.add("autocomplete-active");
-          }
-          function removeActive(x) {
-            for (var i = 0; i < x.length; i++) {
-              x[i].classList.remove("autocomplete-active");
-            }
-          }
-          function closeAllLists(elmnt) {
-            var x = document.getElementsByClassName("autocomplete-items");
-            for (var i = 0; i < x.length; i++) {
-              if (elmnt != x[i] && elmnt != inp) {
-                x[i].parentNode.removeChild(x[i]);
+    </script>
+
+    <script> //AUTOCOMPLETE Länder
+      function autocompleteland(inp, arr) {
+        var currentFocus;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
               }
             }
-          }
-          document.addEventListener("click", function (e) {
-              closeAllLists(e.target);
-          });
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          x[currentFocus].classList.add("autocomplete-active");
         }
-        
-        var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
-        
-        autocompleteland(document.getElementById("country"), countries);
-      </script>
+        function removeActive(x) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+      }
+      
+      var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+      
+      autocompleteland(document.getElementById("country"), countries);
+    </script>
   
-      <script> //AUTOCOMPLETE Sprachen
-        function autocompletesprache(inp, arr) {
-          var currentFocus;
-          inp.addEventListener("input", function(e) {
-              var a, b, i, val = this.value;
-              closeAllLists();
-              if (!val) { return false;}
-              currentFocus = -1;
-              a = document.createElement("DIV");
-              a.setAttribute("id", this.id + "autocomplete-list");
-              a.setAttribute("class", "autocomplete-items");
-              this.parentNode.appendChild(a);
-              for (i = 0; i < arr.length; i++) {
-                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-                  b = document.createElement("DIV");
-                  b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
-                  b.innerHTML += arr[i].substr(val.length);
-                  b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
-                  b.addEventListener("click", function(e) {
-                      inp.value = this.getElementsByTagName("input")[0].value;
-                      closeAllLists();
-                  });
-                  a.appendChild(b);
-                }
-              }
-          });
-          inp.addEventListener("keydown", function(e) {
-              var x = document.getElementById(this.id + "autocomplete-list");
-              if (x) x = x.getElementsByTagName("div");
-              if (e.keyCode == 40) {
-                currentFocus++;
-                addActive(x);
-              } else if (e.keyCode == 38) { //up
-                currentFocus--;
-                addActive(x);
-              } else if (e.keyCode == 13) {
-                e.preventDefault();
-                if (currentFocus > -1) {
-                  if (x) x[currentFocus].click();
-                }
-              }
-          });
-          function addActive(x) {
-            /*a function to classify an item as "active":*/
-            if (!x) return false;
-            /*start by removing the "active" class on all items:*/
-            removeActive(x);
-            if (currentFocus >= x.length) currentFocus = 0;
-            if (currentFocus < 0) currentFocus = (x.length - 1);
-            x[currentFocus].classList.add("autocomplete-active");
-          }
-          function removeActive(x) {
-            for (var i = 0; i < x.length; i++) {
-              x[i].classList.remove("autocomplete-active");
-            }
-          }
-          function closeAllLists(elmnt) {
-            var x = document.getElementsByClassName("autocomplete-items");
-            for (var i = 0; i < x.length; i++) {
-              if (elmnt != x[i] && elmnt != inp) {
-                x[i].parentNode.removeChild(x[i]);
+    <script> //AUTOCOMPLETE Sprachen
+      function autocompletesprache(inp, arr) {
+        var currentFocus;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
               }
             }
-          }
-          document.addEventListener("click", function (e) {
-              closeAllLists(e.target);
-          });
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          x[currentFocus].classList.add("autocomplete-active");
         }
-        
-        var sprachen = ["Englisch", "Mandarin-Chinesisch", "Hindi", "Spanisch", "Arabisch", "Französisch", "Urdu", "Bengalisch", "Russisch", "Portugiesisch", "Malaiisch", "Panjabi", "Deutsch", "Persisch", "Japanisch", "Suaheli", "Marath", "Telugu", "Wu-Chinesisch", "Tamil", "Türkisch", "Vietnamesisch", "Koreanisch", "Kantonesisch", "Italienisch", "Javanisch", "Hausa", "Thai", "Gujarati", "Bhojpuri"];
-        
-        autocompletesprache(document.getElementById("language1"), sprachen);
-        autocompletesprache(document.getElementById("language2"), sprachen);
-      </script>
+        function removeActive(x) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+      }
+      
+      var sprachen = ["Englisch", "Mandarin-Chinesisch", "Hindi", "Spanisch", "Arabisch", "Französisch", "Urdu", "Bengalisch", "Russisch", "Portugiesisch", "Malaiisch", "Panjabi", "Deutsch", "Persisch", "Japanisch", "Suaheli", "Marath", "Telugu", "Wu-Chinesisch", "Tamil", "Türkisch", "Vietnamesisch", "Koreanisch", "Kantonesisch", "Italienisch", "Javanisch", "Hausa", "Thai", "Gujarati", "Bhojpuri"];
+      
+      autocompletesprache(document.getElementById("language1"), sprachen);
+      autocompletesprache(document.getElementById("language2"), sprachen);
+    </script>
+
+<script>
+  //function called at start
+  $(function(){
+      
+      console.log("started");
+      getDataLocal();
+      
+  });
+
+
+  function getDataLocal()
+  {
+  var serverJSON=[
+  {"jsonstring":{"text":"Blablabla Urlaub Reisen bla",
+  "title":"Lisa","alter":"120"},"key":"Lisa"},
+  {"jsonstring":{"text":"Blablabla Kultur Essen",
+  "title":"Tom","alter":"89"},"key":"Tom"},
+  {"jsonstring":{"text":"Irgendwas mit Kunst",
+  "title":"Karl","alter":"58"},"key":"Karl"},
+  {"jsonstring":{"text":"Blablabla Stand",
+  "title":"Lisa-Dorothea","alter":"79"},"key":"Lisa-Dorothea"},
+  {"jsonstring":{"text":"Irgendwas mit öko",
+  "title":"Tommi","alter":"99"},"key":"tom"}];
+  console.log("hab die daten");
+  fillCards(serverJSON);
+
+  }
+
+  var libraryCards=[];//#global variable
+  function fillCards(aServerJSON)
+  {	
+      var kartencolumn=$("#kartencontent");
+      kartencolumn.empty();
+      
+      if (aServerJSON.length>0)
+      {
+          jQuery.each(aServerJSON,function(index,objectJSON){
+              var cardJSON=objectJSON.jsonstring;
+              var cardKey=objectJSON.key;
+              console.log(cardKey+" "+cardJSON.title+" "+cardJSON.alter);
+              
+              var cardDiv=createCard(cardJSON.title,cardJSON.text,cardJSON.alter);
+          });
+      
+      }
+  }
+
+
+  //function creates a card
+  function createCard(title,text,alter)
+  {
+      var divid = $("#divid");
+      var cardBody=$("<div/>").addClass("card-body");
+      var cardPic='<img id="Profilbild" src="pics/login.png" />';
+      var cardContent=$("<div/>").addClass("row rowincardbody");
+      var nurtext=$("<div/>");
+
+      var cardTitle=$("<h6/>").addClass("card-title");
+      var cardAge=$("<h5/>").addClass("card-age");
+      cardTitle.append(title + ", " + alter)
+          
+      var cardText=$("<p/>").addClass("card-text");
+      cardText.append(text);
+      
+      nurtext.append(cardTitle, cardAge);
+      nurtext.append(cardText);
+
+      cardContent.append(cardPic, nurtext);
+      cardBody.append(cardContent);
+
+      divid.append(cardBody);
+
+      if (divid.children().length % 3 == 0) {
+        console.log("teilbar 3");
+        var cardBody=$("<div/>").addClass("card-body");
+        cardBody.addClass("red");
+        divid.append(cardBody);
+        console.log("cardbody ist" , cardBody);
+        return divid;
+      }
+
+      else {
+        return divid;
+      }
+
+      
+  }
+
+
+</script>
+
   
 </body>
 </html>
