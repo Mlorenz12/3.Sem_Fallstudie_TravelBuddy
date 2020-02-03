@@ -38,7 +38,7 @@
         </div>
     </nav>
   <div class="container">
-      <div class="row" style="width: inherit;">
+      <div class="row" style="width: inherit; margin-top: 1cm; margin-bottom: 2cm;">
         <div class="col">
           <h1>Search for your travelbuddy</h1>
         </div>
@@ -106,9 +106,11 @@
         </div>
         <div class="col-lg-4">
           <label for="gender">Preferred gender</label><br>
-          <input type="radio" name="gender" id="gender" value="male" class="">Männlich</button>
-          <input type="radio" name="gender" id="gender" value="female" class="">Weiblich</input>
-          <input type="radio" name="gender" id="gender" value="div" class="">Divers</input>
+          <div class="checks">
+            <input type="checkbox" name="gender" style="border: red solid;" id="gender" value="male" class="">Männlich</button>
+            <input type="checkbox" name="gender" id="gender" value="female" class="">Weiblich</input>
+            <input type="checkbox" name="gender" id="gender" value="div" class="">Divers</input>
+          </div>
         </div>
         
         <div class="col-lg-4" autocomplete="off">
