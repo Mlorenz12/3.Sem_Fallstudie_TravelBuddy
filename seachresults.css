@@ -81,6 +81,12 @@ align-self: center;
 input {
     margin: 0;
 }
+
+.checks {
+    vertical-align: auto;
+    width: max-content;
+}
+
 label {
     margin-top: .5cm;
     margin-bottom: 0;
@@ -221,3 +227,76 @@ section.range-slider input:last-of-type::-moz-range-track {
     background-color: red;
     color: red;
 }
+
+#Profilbild {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+
+  .card-body {
+    border-bottom: lightgray solid .5px;
+    width: 100%;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  .card-werbung {
+    border-bottom: lightgray solid .5px;
+    width: 500px;
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+
+  .card-info {
+    color: grey;
+    text-align: center;
+    font-size: 85%;
+    margin: 0;
+  }
+
+  #Werbungsbild {
+    width: 80%;
+  }
+
+  .card-text {
+    text-align: left;
+    font-size: 90%;
+    height: 1.1cm;
+    overflow: hidden;
+  }
+
+  .card-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .red {
+    background-color: red;
+  }
+
+  .container {
+    max-width: 1300px;
+  }
+
+  #leisteoben {
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-top: 10px;
+  }
+
+  #gender {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: .2%;
+    padding-left: .2%;
+    width: fit-content;
+  }
