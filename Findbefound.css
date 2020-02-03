@@ -1,6 +1,6 @@
 .bg {
     /*  0.4 Bild!  */
-    background-image: url(http://192.168.56.1:8080/HintergrundStart.jpg);
+    background-image: url(http://192.168.56.1:8080/Hintergrund40.jpg);
     height: 50%; 
 
     background-position: center;
@@ -149,6 +149,13 @@ label {
     margin-bottom: 10%;
   }
 
+.checks {
+    background-color: white;
+    border: grey solid thin;
+    border-radius: .05cm;
+    width: max-content;
+}
+
 .sprachen {
     width: 100%;
     margin-right: 0px!important;
@@ -174,6 +181,7 @@ section.range-slider input {
     height: 18px;
     margin: 0;
     padding: 0;
+    
 }
 
 section.range-slider input::-webkit-slider-thumb {
