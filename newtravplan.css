@@ -1,0 +1,199 @@
+li {
+    color: black;
+    float: left;
+    position: relative;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+li::after {
+    background-color: black;
+    content: "";
+    width: 0;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    margin-left: 40%;
+    margin-right: 40%;
+    transition: width 0.35s ease 0s;
+    position: absolute;
+}
+
+li:hover::after {
+    width: 20%;
+    height: 5px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.aktiv {
+  font-weight: bolder;
+  color: black;
+}
+
+.navbar-light .navbar-nav .nav-link {
+color: rgba(0, 0, 0, 0.69);
+}
+
+.loginpic {
+width: 18%;
+align-self: center;
+}
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.autocompletesprachen {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid lightgrey;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  /*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: rgb(67, 157, 187) !important; 
+    color: #ffffff; 
+  }
+
+input {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+label {
+    margin-bottom: 0;
+}
+
+.dropdwn {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+.suchen {
+    background-color: rgb(67, 157, 187);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 4%;
+    margin-bottom: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Muli:400);
+
+.calendar, .calendar_weekdays, .calendar_content {
+    max-width: 300px;
+}
+.calendar {
+    margin: auto;
+    font-family:'Muli', sans-serif;
+    font-weight: 400;
+}
+.calendar_content, .calendar_weekdays, .calendar_header {
+    position: relative;
+    overflow: hidden;
+}
+.calendar_weekdays div {
+    display:inline-block;
+    vertical-align:top;
+}
+.calendar_weekdays div, .calendar_content div {
+    width: 14.28571%;
+    overflow: hidden;
+    text-align: center;
+    background-color: transparent;
+    color: #6f6f6f;
+    font-size: 14px;
+}
+.calendar_content div {
+    border: 1px solid transparent;
+    float: left;
+}
+.calendar_content div:hover {
+    border: 1px solid #dcdcdc;
+    cursor: default;
+}
+.calendar_content div.blank:hover {
+    cursor: default;
+    border: 1px solid transparent;
+}
+.calendar_content div.past-date {
+    color: #d5d5d5;
+}
+.calendar_content div.today {
+    font-weight: bold;
+    font-size: 14px;
+    color: #87b633;
+    border: 1px solid #dcdcdc;
+}
+.calendar_content div.selected {
+    background-color: #f0f0f0;
+}
+.calendar_header {
+    width: 100%;
+    text-align: center;
+}
+.calendar_header h2 {
+    padding: 0 10px;
+    font-family:'Muli', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #87b633;
+    float:left;
+    width:70%;
+    margin: 0 0 10px;
+}
+button.switch-month {
+    background-color: transparent;
+    padding: 0;
+    outline: none;
+    border: none;
+    color: #dcdcdc;
+    float: left;
+    width:15%;
+    transition: color .2s;
+}
+button.switch-month:hover {
+    color: #87b633;
+}
