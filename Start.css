@@ -46,17 +46,6 @@ ul {
   height:250px;
 }
 
-.submitreg {
-  width: 100%;
-  color: white;
-  background-color: lightblue;
-  border: 1px cadetblue;
-  border-radius: .8cm;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  margin-top: 15px;
-}
-
 .reginput {
   width: 100%;
   border-radius: 0.6cm;
@@ -93,7 +82,7 @@ ul {
 .bg {
       /*  0.6 Bild!  */
 
-        background-image: url(http://192.168.56.1:8080/HintergrundStart.jpg);
+        background-image: url(pics/Hintergrund60.jpg);
         height: 50%; 
     
         background-position: center;
@@ -120,6 +109,8 @@ ul {
     padding-bottom: 1%;
     padding-right: .5cm;
     padding-left: .5cm;
+    background-color: rgb(67, 157, 187);
+    font-weight: 500;
 }
 
 .funktionen {
@@ -153,8 +144,8 @@ p {
 
 .fktcols {
   padding-bottom: 1cm;
-  padding-left: 1.2cm;
-  padding-right: 1.2cm;
+  padding-left: 1.8cm;
+  padding-right: 1.8cm;
 }
 
 .carlaspain {
@@ -172,12 +163,22 @@ margin-bottom: 20%;
 .regformore {
   font-weight: 500;
   border-radius: 1cm;
-  color: darkcyan;
+  color: rgb(67, 157, 187);
   background-color: white;
-  border-color: darkcyan;
+  border-color: rgb(67, 157, 187);;
   border-width: 2px;
   padding: .3cm;
   font-size: 100%;
   display: block;
   margin: auto auto;
+}
+
+
+.leisteuntenlogo {
+  width: 10%;
+}
+
+.leisteuntentext {
+  text-align: center;
+  margin: 0;
 }

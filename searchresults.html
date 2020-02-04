@@ -11,31 +11,7 @@
     
 
     <title>NOCHÄNDERN</title>
-    <style>
-      #Profilbild {
-        width: 100px;
-      }
 
-
-      .card-body {
-        border: black solid .5px;
-        border-radius: .1cm;
-        width: 500px;
-        margin-right: 5px;
-        margin-left: 5px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-      }
-
-      .card-text {
-        text-align: left;
-      }
-
-      .red {
-        background-color: red;
-      }
-
-    </style>
 
     <link rel="stylesheet" href="seachresults.css">
 
@@ -62,55 +38,73 @@
     </nav>
 
     <div>
-        <div class="row balken d-flex justify-content-center">
-            <input type="month" name="montharriv" id="montharriv" class="form-control bildtext balkenoben">
-            <input type="number" name="days" id="days" class="form-control bildtext balkenoben">
-            <div class="autocomplete" autocomplete="off">
+        <div class="row balken d-flex justify-content-center" id="leisteoben">
+
+              <input type="month" name="montharriv" id="montharriv" class="form-control bildtext balkenoben">
+              <input type="number" name="days" id="days" class="form-control bildtext balkenoben">
+              <div class="autocomplete" autocomplete="off">
                 <input id="country" type="text" class="form-control balkenoben" name="destination">
-            </div>
-            <input type="text" name="city" id="city" class="form-control balkenoben">  
-            <select name="reiseart" id="reiseart" class="form-control balkenoben">
+              </div>
+              <input type="text" name="city" id="city" class="form-control balkenoben">  
+              <select name="reiseart" id="reiseart" class="form-control balkenoben">
                 <option value="" disabled selected hidden></option>
                 <option value="backpack">Backpacking</option>
                 <option value="allinclusive">All inclusive</option>
                 <option value="roadtrip">Roadtrip</option>
                 <option value="rest">NOCH WAS?</option>
-            </select>
-            <input type="number" name="budget" id="budget" class="form-control balkenoben">  
-            <section class="range-slider" id="age">
+              </select>
+
+              
+
+              <input type="number" name="budget" id="budget" class="form-control balkenoben">  
+              <section class="range-slider" id="age">
                 <span class="rangeValues"></span>
                 <input value="20" min="18" max="80" step="1" type="range" id="minalter">
                 <input value="35" min="18" max="80" step="1" type="range" id="maxalter">
-            </section>  
-            <div class="radios" id="gender" value="">
-                <input type="radio" name="gender" id="male" value="male">Männlich</button>
-                <input type="radio" name="gender" id="female" value="female">Weiblich</input>
-                <input type="radio" name="gender" id="divers" value="div">Divers</input>
-            </div>
-            <div class="autocompletesprachen balkenoben" autocomplete="off">
-                <input id="language1" type="text" class="form-control sprachen" name="language1">
-            </div>
-            <div class="autocompletesprachen balkenoben">
-                <input id="language2" type="text" class="form-control sprachen" name="language2">
-            </div>
+              </section>
+              <div class="checks form-control" id="gender" value="">
+                  <input type="checkbox" name="gender" id="male" value="male">Männlich</button>
+                  <input type="checkbox" name="gender" id="female" value="female">Weiblich</input>
+                  <input type="checkbox" name="gender" id="divers" value="div">Divers</input>
+              </div>
+              <div class="autocompletesprachen balkenoben" autocomplete="off">
+                  <input id="language1" type="text" class="form-control sprachen" name="language1">
+              </div>
+              <div class="autocompletesprachen balkenoben">
+                  <input id="language2" type="text" class="form-control sprachen" name="language2">
+              </div>
+
         </div>
     </div>
             
-    <div>
-      <div id="container" class="container">
-        <div id="stage">
-          <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12">
-              <div class="row" id="divid">
+    <div id="container" class="container d-flex justify-content-around">
+      <div id="stage">
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="row" id="divid1">
 
-              </div>
-            </div><!-- gutter-column-->
-          </div><!--end of first row of animal cards-->
-        </div><!-- stage -->
-      </div><!-- container-->
+            </div>
+          </div><!-- gutter-column-->
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="row" id="divid2">
+
+            </div>
+          </div><!-- gutter-column-->
+        </div><!--end of first row of animal cards-->
+      </div><!-- stage -->
+    </div><!-- container-->
+
+
+
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <!-- Modal body -->
+          <!-- Modal footer -->
+        </div>
+      </div>
     </div>
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -325,6 +319,67 @@
       autocompletesprache(document.getElementById("language2"), sprachen);
     </script>
 
+<script type="application/javascript">
+  var name = "Hannah Weber";
+  var desti = "Italien";
+  var time ="1.1.1.1.1.1";
+  var flex = "2 days"
+  var gender = "Div";
+  var living = "57572";
+  var prevj = 0;
+  var age = 12;
+  var lang = "None"
+  var facebook = "Hannah Weber"
+  var insta = "hannediehenne"
+  var twitter = "Hannah Weber"
+  createmodal(name, desti, time, flex, gender, living, prevj, age, lang, facebook, insta, twitter)
+
+  function createmodal(name, desti, time, flex, gender, living, prevj, age, lang, facebook, inst, twitter)
+      {
+      var modalcontent = $('.modal-content');
+      var header = $("<div/>").addClass("modal-header");
+      var headertitel = $("<h3/>").addClass("modal-title");
+      headertitel.append("Listing from " + name);
+      var headerbutton = '<button type="button" class="close" data-dismiss="modal">×</button>';
+      header.append(headertitel, headerbutton);
+
+      var modalbody = $("<div/>").addClass("modal-body");
+      var row = $("<div/>").addClass("row");
+      var col1 = $("<div/>").addClass("col-lg-7 col-md-7 col-sm-7");
+      var col2 = $("<div/>").addClass("col-lg-4 col-md-4 col-sm-4 column2");
+      col1.append("Destination: " , desti, '<br>');
+      col1.append("Time span: " , time, '<br>');
+      col1.append("Flexibility: " , flex, '<br>');
+      col1.append('<h5 id="persinfo">Personal information</h5>');
+      col1.append("Gender: " , gender, '<br>');
+      col1.append("Living in: " , living, '<br>');
+      col1.append("Previous journeys: " , prevj, '<br>');
+      col1.append("Age: " , age,'<br>');
+      col1.append("Languages: ", lang)
+
+      var socmed1 = $("<div/>").addClass("row socmed");
+      socmed1.append('<img src="pics/fbicon.png" alt="" class="socmedicon">');
+      socmed1.append(facebook, '<br>');
+      var socmed2 = $("<div/>").addClass("row socmed");
+      socmed2.append('<img src="pics/instaicon.png" alt="" class="socmedicon">');
+      socmed2.append(insta);
+      var socmed3 = $("<div/>").addClass("row socmed");
+      socmed3.append('<img src="pics/twittericon.png" alt="" class="socmedicon">');
+      socmed3.append(twitter);
+      var profilbutton = '<a href="nonexistent.html"><button class="btn btn-primary btn-sm regformore">Go to profile</button></a>'
+      col2.append(socmed1, socmed2, socmed3, profilbutton);
+
+      var rowcols = $("<div/>").addClass("row");
+      rowcols.append(col1, col2)
+      modalbody.append(rowcols);
+
+      var footer = '<div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>'
+      modalcontent.append(header, modalbody, footer);
+              
+      }
+</script>
+
+
 <script>
   //function called at start
   $(function(){
@@ -338,16 +393,16 @@
   function getDataLocal()
   {
   var serverJSON=[
-  {"jsonstring":{"text":"Blablabla Urlaub Reisen bla",
-  "title":"Lisa","alter":"120"},"key":"Lisa"},
+  {"jsonstring":{"text":"Blablabla babba babababababbaba babababababab ababababab babab Reisen Urlaub babba babababababbaba babababababab ababababab babab Reisen bababababababbabba babababababbaba babababababab ababababab babab Reisen bla",
+  "title":"Lisa","alter":"120", "from":"Germany", "gender":"Male", "prevjourneys": "2"},"key":"Lisa"},
   {"jsonstring":{"text":"Blablabla Kultur Essen",
-  "title":"Tom","alter":"89"},"key":"Tom"},
+  "title":"Tom","alter":"89", "from":"Timbuktu", "gender":"Female", "prevjourneys": "5"},"key":"Tom"},
   {"jsonstring":{"text":"Irgendwas mit Kunst",
-  "title":"Karl","alter":"58"},"key":"Karl"},
+  "title":"Karl","alter":"58", "from":"Bavaria", "gender":"Male", "prevjourneys": "8"},"key":"Karl"},
   {"jsonstring":{"text":"Blablabla Stand",
-  "title":"Lisa-Dorothea","alter":"79"},"key":"Lisa-Dorothea"},
+  "title":"Lisa-Dorothea","alter":"79", "from":"Italy", "gender":"Divers", "prevjourneys": "4"},"key":"Lisa-Dorothea"},
   {"jsonstring":{"text":"Irgendwas mit öko",
-  "title":"Tommi","alter":"99"},"key":"tom"}];
+  "title":"Tommi","alter":"99", "from":"Spain", "gender":"Male", "prevjourneys": "7"},"key":"tom"}];
   console.log("hab die daten");
   fillCards(serverJSON);
 
@@ -356,8 +411,9 @@
   var libraryCards=[];//#global variable
   function fillCards(aServerJSON)
   {	
-      var kartencolumn=$("#kartencontent");
-      kartencolumn.empty();
+      var col1=$("#divid1");
+      var col2=$("#divid2");
+      col1.empty();
       
       if (aServerJSON.length>0)
       {
@@ -366,56 +422,65 @@
               var cardKey=objectJSON.key;
               console.log(cardKey+" "+cardJSON.title+" "+cardJSON.alter);
               
-              var cardDiv=createCard(cardJSON.title,cardJSON.text,cardJSON.alter);
-          });
-      
+              var cardDiv=createCard(cardJSON.title,cardJSON.text,cardJSON.alter, cardJSON.from, cardJSON.gender, cardJSON.prevjourneys);
+              if (col2.children().length>col1.children().length) {
+                col1.append(cardDiv);	
+              }
+              else {
+                col2.append(cardDiv);	
+              }	
+            });
       }
   }
 
 
   //function creates a card
-  function createCard(title,text,alter)
+  function createCard(title,text,alter,from,gender,prev)
   {
-      var divid = $("#divid");
+      var col = $("<div/>").addClass("col-lg-1");
+      var col2 = $("<div/>").addClass("col");
+      var werbung = '<img id="Werbungsbild" src="pics/skyscanner.jpg" />';
       var cardBody=$("<div/>").addClass("card-body");
-      var cardPic='<img id="Profilbild" src="pics/login.png" />';
+      var cardPic='<img id="Profilbild" src="pics/loginicon.jpg" />';
       var cardContent=$("<div/>").addClass("row rowincardbody");
       var nurtext=$("<div/>");
 
       var cardTitle=$("<h6/>").addClass("card-title");
-      var cardAge=$("<h5/>").addClass("card-age");
       cardTitle.append(title + ", " + alter)
-          
+      
+      var cardInfo=$("<div/>").addClass("d-flex justify-content-center card-info");
+      var colfrom = $("<div/>").addClass("col");
+      var colgender = $("<div/>").addClass("col");
+      var colprev = $("<div/>").addClass("col");
+
+      var from = "From: "+ from;
+      colfrom.append(from)
+      var gender = "Gender: " + gender;
+      colgender.append(gender)
+      var prev = "Previous Journeys: " + prev;
+      colprev.append(prev)
+      cardInfo.append(colfrom , colgender , colprev);
+
       var cardText=$("<p/>").addClass("card-text");
       cardText.append(text);
-      
-      nurtext.append(cardTitle, cardAge);
-      nurtext.append(cardText);
 
-      cardContent.append(cardPic, nurtext);
+      var mehr = '<div class="row d-flex justify-content-end""><a href="#" data-toggle="modal" data-target="#myModal">Read more...</a></div>'
+      
+      nurtext.append(cardTitle);
+      nurtext.append(cardInfo);
+      nurtext.append(cardText);
+      nurtext.append(mehr)
+
+      col.append(cardPic)
+      col2.append(nurtext)
+      cardContent.append(col, col2);
       cardBody.append(cardContent);
 
-      divid.append(cardBody);
 
-      if (divid.children().length % 3 == 0) {
-        console.log("teilbar 3");
-        var cardBody=$("<div/>").addClass("card-body");
-        cardBody.addClass("red");
-        divid.append(cardBody);
-        console.log("cardbody ist" , cardBody);
-        return divid;
-      }
-
-      else {
-        return divid;
-      }
-
-      
+        return cardBody;
+            
   }
-
-
 </script>
-
   
 </body>
 </html>
