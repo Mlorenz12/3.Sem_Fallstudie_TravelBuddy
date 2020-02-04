@@ -37,6 +37,7 @@
           
         </div>
     </nav>
+
   <div class="container">
       <div class="row" style="width: inherit; margin-top: 1cm; margin-bottom: 2cm;">
         <div class="col">
@@ -56,7 +57,7 @@
           <label for="montharriv">Month of arrival</label><br>
           <div class="row" style="margin: 0;">
             <img src="pics\flight.svg.png" class="travelicons" alt="Flugzeug-Icon">
-            <input type="month" name="montharriv" id="montharriv" class="form-control bildtext">
+            <input type="month" name="montharriv" language="english" id="montharriv" class="form-control bildtext">
           </div>
         </div>
         <div class="col-lg-4 pl-3 pr-3">
@@ -90,8 +91,14 @@
           </select>
         </div>              
         <div class="col-lg-3 pl-3 pr-3">
-          <label for="city">Your budget</label>
-          <input type="number" name="budget" id="budget" class="form-control" placeholder="USD per day">  
+          <label for="budget">Your budget</label>
+          <select name="budget" id="budget" class="form-control dropdwn">
+            <option value="" disabled selected hidden>Budget per day (in USD)</option>
+            <option value="preisstufe1">0 - 50 $</option>
+            <option value="preisstufe2"> 51 - 100 $</option>
+            <option value="preisstufe3">101 - 150 $</option>
+            <option value="preisstufe4">> 150 $</option>
+        </select>
         </div>              
       </div>
       <p></p>
@@ -130,6 +137,25 @@
         <button type="button" class="btn btn-primary btn-sm suchen" onClick="suchen()"><a href="searchresults.html" style="color: white;">Search</a></button>
       </div>
 
+    </div>
+    <div class="container">
+      <div class="row" style="margin: 0; padding: 0;">
+        <div class="col-lg-3 col-md-3 col-sm-5">
+          <h5 class="leisteuntentext" style="margin-bottom: 10px;">Contact us</h5>
+          <p class="leisteuntentext">travelbuddy</p>
+          <p class="leisteuntentext">hello@travelbuddy.com</p>
+          <p class="leisteuntentext">+1 800 000000</p>
+        </div>
+        <div class="offset-lg-5 col-lg-3 offset-md-5 col-md-3 col-sm-5" style="margin-bottom: 5%;">
+          <h5 class="leisteuntentext" style="margin-bottom: 10px;">Follow us</h5> <br>
+          <div class="d-flex justify-content-center">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/fbicon.png" alt="">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/fbicon.png" alt="">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/fbicon.png" alt="">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/fbicon.png" alt="">
+          </div>
+        </div>
+      </div>
     </div>
 
 

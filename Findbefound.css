@@ -1,6 +1,6 @@
 .bg {
     /*  0.4 Bild!  */
-    background-image: url(http://192.168.56.1:8080/Hintergrund40.jpg);
+    background-image: url(pics/Hintergrund40.jpg);
     height: 50%; 
 
     background-position: center;
@@ -8,14 +8,6 @@
     background-size: cover;
 }
 
-.noroad {
-    padding: 0;
-    margin-right: 0;
-    margin-left: 0;
-    padding-bottom: 4cm;
-    text-align: center;
-    font-weight: bold;
-  }
 
 li {
     color: black;
@@ -141,6 +133,7 @@ label {
 
 .suchen {
     background-color: rgb(67, 157, 187);
+    border-color: rgb(67, 157, 187);
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 8px;
@@ -151,8 +144,8 @@ label {
 
 .checks {
     background-color: white;
-    border: grey solid thin;
-    border-radius: .05cm;
+    border: 1px solid #ced4da;;
+    border-radius: .25rem;
     width: max-content;
 }
 
@@ -214,3 +207,13 @@ section.range-slider input:last-of-type::-moz-range-track {
   border: 0;
 }
 
+
+.leisteuntenlogo {
+    width: 10%;
+  }
+  
+  .leisteuntentext {
+      color: white;
+    text-align: center;
+    margin: 0;
+  }
