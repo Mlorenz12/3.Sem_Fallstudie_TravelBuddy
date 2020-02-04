@@ -1,0 +1,208 @@
+.bg {
+    /*  0.4 Bild!  */
+    background-image: url(http://192.168.56.1:8080/HintergrundStart.jpg);
+    height: 50%; 
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.noroad {
+    padding: 0;
+    margin-right: 0;
+    margin-left: 0;
+    padding-bottom: 4cm;
+    text-align: center;
+    font-weight: bold;
+  }
+
+li {
+    color: black;
+    float: left;
+    position: relative;
+    padding: 10px 20px;
+    overflow: hidden;
+}
+
+h1 {
+    text-align: center;
+}
+
+li::after {
+    background-color: black;
+    content: "";
+    width: 0;
+    height: 5px;
+    left: 0;
+    bottom: 0;
+    margin-left: 40%;
+    margin-right: 40%;
+    transition: width 0.35s ease 0s;
+    position: absolute;
+}
+
+li:hover::after {
+    width: 20%;
+    height: 5px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.aktiv {
+  font-weight: bolder;
+  color: black;
+}
+
+.navbar-light .navbar-nav .nav-link {
+color: rgba(0, 0, 0, 0.69);
+}
+
+.loginpic {
+width: 18%;
+align-self: center;
+}
+
+.travelicons {
+    width: 38px;
+    height: 38px;
+}
+
+.bildtext {
+    width: 80%;
+    margin-left: 5px;
+}
+
+input {
+    margin: 0;
+}
+label {
+    margin-top: .5cm;
+    margin-bottom: 0;
+}
+
+.socmedabstand {
+    margin-top: 1.35cm;
+}
+
+.textfeld {
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   }
+
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.autocompletesprachen {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid lightgrey;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  /*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: rgb(67, 157, 187) !important; 
+    color: #ffffff; 
+  }
+
+.suchen {
+    background-color: rgb(67, 157, 187);
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 4%;
+    margin-bottom: 10%;
+  }
+
+.sprachen {
+    width: 100%;
+    margin-right: 0px!important;
+}
+
+
+/*AB HIER SLIDER*/
+section.range-slider {
+    position: relative;
+    width: 200px;
+    height: 35px;
+    text-align: center;
+}
+
+section.range-slider input {
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 15px;
+    width: 200px;
+    outline: none;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+}
+
+section.range-slider input::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+}
+
+section.range-slider input::-moz-range-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+    -moz-appearance: none;
+    width: 9px;
+}
+
+section.range-slider input::-moz-range-track {
+    position: relative;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 1);
+    border: 0;
+}
+section.range-slider input:last-of-type::-moz-range-track {
+    -moz-appearance: none;
+    background: none transparent;
+    border: 0;
+}
+  section.range-slider input[type=range]::-moz-focus-outer {
+  border: 0;
+}
+

@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+
+    <title>NOCHÄNDERN</title>
+
+    <link rel="stylesheet" href="Findbefound.css">
+
+</head>
+
+<body>
+<div class="bg">
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-logo" href="#"><img src="pics/logo.jpg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto nav-fill w-100" style="font-size: large;">
+            <li class="nav-item"><a class="nav-link" href="Start.html">Start</a></li>
+            <li class="nav-item"><a class="nav-link" href="nonexistent.html">About</a></li>
+            <li class="nav-item aktiv"><a class="nav-link" href="#">Find and be found</a></li>
+            <li class="nav-item"><a class="nav-link" href="nonexistent.html">Community</a></li>
+            <li class="nav-item"><a class="nav-link" href="nonexistent.html">Help</a></li>
+            <li class="nav-item konto"><a href="login.html"><img src="pics/Avatar.png" class="loginpic"></a></li>
+          </ul>
+          
+        </div>
+    </nav>
+  <div class="container">
+      <div class="row" style="width: inherit;">
+        <div class="col">
+          <h1>Search for your travelbuddy</h1>
+        </div>
+      </div>
+      <div class="row pl-3 pr-3" style="margin-top: .6cm;">
+        <div class="offset-lg-4 offset-md-4 offset-sm-3 offset-xs-4 col-lg-4 col-md-4 col-sm-6 col-xs-4">
+          <div class="row">
+            <img src="pics/plus.jpg" style="height: 40px; width: 40px;" alt="">
+            <p style="font-size: 140%; padding-left: 10px; margin-bottom: 0;">Create your own</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="offset-lg-2 col-lg-4 pl-3 pr-3">
+          <label for="montharriv">Month of arrival</label><br>
+          <div class="row" style="margin: 0;">
+            <img src="pics\flight.svg.png" class="travelicons" alt="Flugzeug-Icon">
+            <input type="month" name="montharriv" id="montharriv" class="form-control bildtext">
+          </div>
+        </div>
+        <div class="col-lg-4 pl-3 pr-3">
+          <label for="days">How many days?</label>
+          <div class="row" style="margin: 0;">
+            <img src="pics/fbicon.png" class="travelicons" alt="Flugzeug-Icon">
+            <input type="number" name="days" id="days" class="form-control bildtext" placeholder="Enter approximate number">
+          </div>
+        </div>              
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 pl-3 pr-3" autocomplete="off">
+          <label for="destination">Your destination</label><br>
+          <div class="autocomplete">
+            <input id="country" type="text" class="form-control" name="destination" placeholder="Enter country">
+          </div>
+        </div>
+        <div class="col-lg-3 pl-3 pr-3">
+          <label for="city">Which city?</label>
+          <input type="text" name="city" id="city" class="form-control">  
+        </div>              
+        <div class="col-lg-3 pl-3 pr-3">
+          <label for="reiseart">Your kind of holiday</label>
+          <select name="reiseart" id="reiseart" class="form-control">
+              <option value="" disabled selected hidden>Choose</option>
+              <option value="backpack">Backpacking</option>
+              <option value="allinclusive">All inclusive</option>
+              <option value="roadtrip">Roadtrip</option>
+              <option value="rest">NOCH WAS?</option>
+          </select>
+        </div>              
+        <div class="col-lg-3 pl-3 pr-3">
+          <label for="city">Your budget</label>
+          <input type="number" name="budget" id="budget" class="form-control" placeholder="USD per day">  
+        </div>              
+      </div>
+      <p></p>
+      <div class="row">
+        <div class="col-lg-4">
+          <label for="age">Age</label><br>
+          <section class="range-slider" id="age">
+            <span class="rangeValues"></span>
+            <input value="20" min="18" max="80" step="1" type="range" id="minalter">
+            <input value="35" min="18" max="80" step="1" type="range" id="maxalter">
+          </section>  
+        </div>
+        <div class="col-lg-4">
+          <label for="gender">Preferred gender</label><br>
+          <input type="radio" name="gender" id="gender" value="male" class="">Männlich</button>
+          <input type="radio" name="gender" id="gender" value="female" class="">Weiblich</input>
+          <input type="radio" name="gender" id="gender" value="div" class="">Divers</input>
+        </div>
+        
+        <div class="col-lg-4" autocomplete="off">
+          <label for="language1">Preferred language</label><br>
+          <div class="row">
+            <div class="autocompletesprachen">
+              <input id="language1" type="text" class="form-control sprachen" name="language1" placeholder="1st language">
+            </div>
+            <div class="autocompletesprachen">
+              <input id="language2" type="text" class="form-control sprachen" name="language2" placeholder="2nd language">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary btn-sm suchen" onClick="suchen()"><a href="searchresults.html" style="color: white;">Search</a></button>
+      </div>
+
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="application/javascript">
+      function suchen() {
+        var month = document.getElementById("montharriv").value; //Format mit Jahr! zB 2020-02 (kann ich auch ändern, wie du willst)
+        var days = document.getElementById("days").value;
+        var country = document.getElementById("country").value;
+        var city = document.getElementById("city").value;
+        var reiseart = document.getElementById("reiseart").value;
+        var budget = document.getElementById("budget").value;
+        var minalter = document.getElementById("minalter").value;
+        var maxalter = document.getElementById("maxalter").value;
+        var gender = $('input[name="gender"]:checked').val();
+        var langu1 = document.getElementById("language1").value;
+        var langu2 = document.getElementById("language2").value;
+
+        console.log(month, days, country, city, reiseart, budget, minalter, maxalter, gender, langu1, langu2)
+      
+        //Achtung: Keinerlei Überprüfung der Eingaben! Kann ich noch einbauen
+        //Aber bitte nochmal absprechen
+        // zB sinnvoll, wenn USD nicht negativ sein kann, Sprachen mit Liste vergleichen, ... 
+        //Wichtig: Sprachen noch auf ENGLISCH!!!!!!!!!! 
+        
+      }
+    </script>
+    
+    <script> //SLIDER
+      function getVals(){
+      // Get slider values
+      var parent = this.parentNode;
+      var slides = parent.getElementsByTagName("input");
+          var slide1 = parseFloat( slides[0].value );
+          var slide2 = parseFloat( slides[1].value );
+      // Neither slider will clip the other, so make sure we determine which is larger
+      if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
+      
+      var displayElement = parent.getElementsByClassName("rangeValues")[0];
+          displayElement.innerHTML = slide1 + " - " + slide2;
+      }
+  
+      window.onload = function(){
+      // Initialize Sliders
+      var sliderSections = document.getElementsByClassName("range-slider");
+          for( var x = 0; x < sliderSections.length; x++ ){
+              var sliders = sliderSections[x].getElementsByTagName("input");
+              for( var y = 0; y < sliders.length; y++ ){
+              if( sliders[y].type ==="range" ){
+                  sliders[y].oninput = getVals;
+                  // Manually trigger event first time to display values
+                  sliders[y].oninput();
+              }
+              }
+          }
+      }
+    </script>
+    <script> //AUTOCOMPLETE Länder
+      function autocompleteland(inp, arr) {
+        var currentFocus;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
+              }
+            }
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+      }
+      
+      var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+      
+      autocompleteland(document.getElementById("country"), countries);
+    </script>
+
+    <script> //AUTOCOMPLETE Sprachen
+      function autocompletesprache(inp, arr) {
+        var currentFocus;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
+              }
+            }
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+      }
+      
+      var sprachen = ["Englisch", "Mandarin-Chinesisch", "Hindi", "Spanisch", "Arabisch", "Französisch", "Urdu", "Bengalisch", "Russisch", "Portugiesisch", "Malaiisch", "Panjabi", "Deutsch", "Persisch", "Japanisch", "Suaheli", "Marath", "Telugu", "Wu-Chinesisch", "Tamil", "Türkisch", "Vietnamesisch", "Koreanisch", "Kantonesisch", "Italienisch", "Javanisch", "Hausa", "Thai", "Gujarati", "Bhojpuri"];
+      
+      autocompletesprache(document.getElementById("language1"), sprachen);
+      autocompletesprache(document.getElementById("language2"), sprachen);
+    </script>
+
+</body>
+</html>

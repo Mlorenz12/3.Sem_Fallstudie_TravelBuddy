@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    
+
+    <title>NOCHÄNDERN</title>
+    <style>
+      #Profilbild {
+        width: 100px;
+      }
+
+
+      .card-body {
+        border: black solid .5px;
+        border-radius: .1cm;
+        width: 500px;
+        margin-right: 5px;
+        margin-left: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      .card-text {
+        text-align: left;
+      }
+
+      .red {
+        background-color: red;
+      }
+
+    </style>
+
+    <link rel="stylesheet" href="seachresults.css">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-logo" href="#"><img src="pics/logo.jpg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto nav-fill w-100" style="font-size: large;">
+            <li class="nav-item"><a class="nav-link" href="Start.html">Start</a></li>
+            <li class="nav-item"><a class="nav-link" href="nonexistent.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="Findbefound.html">Find and be found</a></li>
+            <li class="nav-item"><a class="nav-link" href="nonexistent.html">Community</a></li>
+            <li class="nav-item"><a class="nav-link" href="nonexistent.html">Help</a></li>
+            <li class="nav-item konto"><a href="login.html"><img src="pics/Avatar.png" class="loginpic"></a></li>
+          </ul>
+            
+        </div>
+    </nav>
+
+    <div>
+        <div class="row balken d-flex justify-content-center">
+            <input type="month" name="montharriv" id="montharriv" class="form-control bildtext balkenoben">
+            <input type="number" name="days" id="days" class="form-control bildtext balkenoben">
+            <div class="autocomplete" autocomplete="off">
+                <input id="country" type="text" class="form-control balkenoben" name="destination">
+            </div>
+            <input type="text" name="city" id="city" class="form-control balkenoben">  
+            <select name="reiseart" id="reiseart" class="form-control balkenoben">
+                <option value="" disabled selected hidden></option>
+                <option value="backpack">Backpacking</option>
+                <option value="allinclusive">All inclusive</option>
+                <option value="roadtrip">Roadtrip</option>
+                <option value="rest">NOCH WAS?</option>
+            </select>
+            <input type="number" name="budget" id="budget" class="form-control balkenoben">  
+            <section class="range-slider" id="age">
+                <span class="rangeValues"></span>
+                <input value="20" min="18" max="80" step="1" type="range" id="minalter">
+                <input value="35" min="18" max="80" step="1" type="range" id="maxalter">
+            </section>  
+            <div class="radios" id="gender" value="">
+                <input type="radio" name="gender" id="male" value="male">Männlich</button>
+                <input type="radio" name="gender" id="female" value="female">Weiblich</input>
+                <input type="radio" name="gender" id="divers" value="div">Divers</input>
+            </div>
+            <div class="autocompletesprachen balkenoben" autocomplete="off">
+                <input id="language1" type="text" class="form-control sprachen" name="language1">
+            </div>
+            <div class="autocompletesprachen balkenoben">
+                <input id="language2" type="text" class="form-control sprachen" name="language2">
+            </div>
+        </div>
+    </div>
+            
+    <div>
+      <div id="container" class="container">
+        <div id="stage">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="row" id="divid">
+
+              </div>
+            </div><!-- gutter-column-->
+          </div><!--end of first row of animal cards-->
+        </div><!-- stage -->
+      </div><!-- container-->
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script type="application/javascript">
+        console.log("bin da");
+        var gender = "divers";
+        $("#divers").attr(checked);
+        console.log("#"+gender);
+        var langu1 = "xx";
+        $('#language1').val(langu1);
+        var langu2 = "yy";
+        $('#language2').val(langu2);
+        var month = "April 2020"
+        $('#montharriv').val(month);
+        var days = 99;
+        $('#days').val(days);
+        var country = Namibia;
+        $('#country').val(country);
+        var city = Windhoek;
+        $('#city').val(city);
+        var reiseart = backpack;
+        $('#reiseart').val(reiseart);
+        var budget = 50000;
+        $('#budget').val(budget);
+        var minalter = 78;
+        $('#minalter').val(minalter);
+        var maxalter = 80;
+        $('#maxalter').val(maxalter);
+
+    </script>
+
+    <script> //SLIDER
+        function getVals(){
+        // Get slider values
+        var parent = this.parentNode;
+        var slides = parent.getElementsByTagName("input");
+            var slide1 = parseFloat( slides[0].value );
+            var slide2 = parseFloat( slides[1].value );
+        // Neither slider will clip the other, so make sure we determine which is larger
+        if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
+        
+        var displayElement = parent.getElementsByClassName("rangeValues")[0];
+            displayElement.innerHTML = slide1 + " - " + slide2;
+        }
+    
+        window.onload = function(){
+        // Initialize Sliders
+        var sliderSections = document.getElementsByClassName("range-slider");
+            for( var x = 0; x < sliderSections.length; x++ ){
+                var sliders = sliderSections[x].getElementsByTagName("input");
+                for( var y = 0; y < sliders.length; y++ ){
+                if( sliders[y].type ==="range" ){
+                    sliders[y].oninput = getVals;
+                    // Manually trigger event first time to display values
+                    sliders[y].oninput();
+                }
+                }
+            }
+        }
+    </script>
+
+    <script> //AUTOCOMPLETE Länder
+      function autocompleteland(inp, arr) {
+        var currentFocus;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
+              }
+            }
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+      }
+      
+      var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+      
+      autocompleteland(document.getElementById("country"), countries);
+    </script>
+  
+    <script> //AUTOCOMPLETE Sprachen
+      function autocompletesprache(inp, arr) {
+        var currentFocus;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
+              }
+            }
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+      }
+      
+      var sprachen = ["Englisch", "Mandarin-Chinesisch", "Hindi", "Spanisch", "Arabisch", "Französisch", "Urdu", "Bengalisch", "Russisch", "Portugiesisch", "Malaiisch", "Panjabi", "Deutsch", "Persisch", "Japanisch", "Suaheli", "Marath", "Telugu", "Wu-Chinesisch", "Tamil", "Türkisch", "Vietnamesisch", "Koreanisch", "Kantonesisch", "Italienisch", "Javanisch", "Hausa", "Thai", "Gujarati", "Bhojpuri"];
+      
+      autocompletesprache(document.getElementById("language1"), sprachen);
+      autocompletesprache(document.getElementById("language2"), sprachen);
+    </script>
+
+<script>
+  //function called at start
+  $(function(){
+      
+      console.log("started");
+      getDataLocal();
+      
+  });
+
+
+  function getDataLocal()
+  {
+  var serverJSON=[
+  {"jsonstring":{"text":"Blablabla Urlaub Reisen bla",
+  "title":"Lisa","alter":"120"},"key":"Lisa"},
+  {"jsonstring":{"text":"Blablabla Kultur Essen",
+  "title":"Tom","alter":"89"},"key":"Tom"},
+  {"jsonstring":{"text":"Irgendwas mit Kunst",
+  "title":"Karl","alter":"58"},"key":"Karl"},
+  {"jsonstring":{"text":"Blablabla Stand",
+  "title":"Lisa-Dorothea","alter":"79"},"key":"Lisa-Dorothea"},
+  {"jsonstring":{"text":"Irgendwas mit öko",
+  "title":"Tommi","alter":"99"},"key":"tom"}];
+  console.log("hab die daten");
+  fillCards(serverJSON);
+
+  }
+
+  var libraryCards=[];//#global variable
+  function fillCards(aServerJSON)
+  {	
+      var kartencolumn=$("#kartencontent");
+      kartencolumn.empty();
+      
+      if (aServerJSON.length>0)
+      {
+          jQuery.each(aServerJSON,function(index,objectJSON){
+              var cardJSON=objectJSON.jsonstring;
+              var cardKey=objectJSON.key;
+              console.log(cardKey+" "+cardJSON.title+" "+cardJSON.alter);
+              
+              var cardDiv=createCard(cardJSON.title,cardJSON.text,cardJSON.alter);
+          });
+      
+      }
+  }
+
+
+  //function creates a card
+  function createCard(title,text,alter)
+  {
+      var divid = $("#divid");
+      var cardBody=$("<div/>").addClass("card-body");
+      var cardPic='<img id="Profilbild" src="pics/login.png" />';
+      var cardContent=$("<div/>").addClass("row rowincardbody");
+      var nurtext=$("<div/>");
+
+      var cardTitle=$("<h6/>").addClass("card-title");
+      var cardAge=$("<h5/>").addClass("card-age");
+      cardTitle.append(title + ", " + alter)
+          
+      var cardText=$("<p/>").addClass("card-text");
+      cardText.append(text);
+      
+      nurtext.append(cardTitle, cardAge);
+      nurtext.append(cardText);
+
+      cardContent.append(cardPic, nurtext);
+      cardBody.append(cardContent);
+
+      divid.append(cardBody);
+
+      if (divid.children().length % 3 == 0) {
+        console.log("teilbar 3");
+        var cardBody=$("<div/>").addClass("card-body");
+        cardBody.addClass("red");
+        divid.append(cardBody);
+        console.log("cardbody ist" , cardBody);
+        return divid;
+      }
+
+      else {
+        return divid;
+      }
+
+      
+  }
+
+
+</script>
+
+  
+</body>
+</html>
