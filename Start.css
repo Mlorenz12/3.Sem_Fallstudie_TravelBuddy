@@ -85,7 +85,7 @@ ul {
         background-image: url(pics/Hintergrund60.jpg);
         height: 50%; 
     
-        background-position: center;
+        background-position: left;
         background-repeat: no-repeat;
         background-size: cover;
 }
@@ -110,6 +110,7 @@ ul {
     padding-right: .5cm;
     padding-left: .5cm;
     background-color: rgb(67, 157, 187);
+    border-color: rgb(67,157,187);
     font-weight: 500;
 }
 

@@ -7,15 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <title>Datenspeichern</title>
+    <title>Login</title>
     
     <link rel="stylesheet" href="login.css">
     
 </head>
 
-<body>
+<body style="font-family: 'Montserrat';">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-logo" href="#"><img src="pics/logo.jpg"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +39,6 @@
   <div class="container">
     <div class="col-lg-10" style="margin-left: auto; margin-right: auto;">
   
-      <form action="" class="" >
         <div class="row" style="width: inherit;">
           <div class="col">
             <h1 style="text-align: center; margin: 6mm;">Welcome to travelbuddy!</h1>
@@ -51,7 +51,9 @@
           <input type="password" name="password" id="password" class="form-control reginput" placeholder="Password (min. 8 characters)" required>  
         </div>
         <button class="submitreg" onClick="login()">Login</button>
-      </form>
+        <div class="col d-flex justify-content-center" style="margin-top: 3%;">
+          <a href="Registrieren.html">Not a member? Register</a>
+        </div>
     </div>
   </div>
 
