@@ -82,8 +82,17 @@ input {
     margin: 0;
 }
 
+#mehrlesen {
+  font-size: 75%;
+  text-align: right;
+}
+
 .checks {
     vertical-align: auto;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ced4da;
+    border-radius: .25re;
     width: max-content;
 }
 
@@ -212,7 +221,7 @@ section.range-slider input:last-of-type::-moz-range-track {
 }
 
 .balken {
-    background-color: lightblue;
+    background-color: rgb(158, 218, 238);
 }
 
 .balkenoben {
@@ -272,15 +281,12 @@ section.range-slider input:last-of-type::-moz-range-track {
     font-size: 90%;
     height: 1.1cm;
     overflow: hidden;
+    margin-bottom: 0;
   }
 
   .card-title {
     font-weight: bold;
     margin-bottom: 6px;
-  }
-
-  .red {
-    background-color: red;
   }
 
   .container {
@@ -300,3 +306,50 @@ section.range-slider input:last-of-type::-moz-range-track {
     padding-left: .2%;
     width: fit-content;
   }
+
+
+  .socmedicon {
+    width: 35px;
+    margin-right: 5px;
+}
+
+.profile {
+    font-weight: 500;
+    border-radius: 1cm;
+    color: rgb(67, 157, 187);
+    background-color: white;
+    border-color: rgb(67, 157, 187);;
+    border-width: 2px;
+    padding: .3cm;
+    font-size: 100%;
+    display: block;
+    margin: auto auto;
+}
+
+
+#persinfo {
+  margin-bottom: 0;
+  margin-top: .5rem;
+}
+
+.column2 {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.socmed {
+  margin-top: 5px;
+}
+
+.regformore {
+  font-weight: 400;
+  border-radius: 1cm;
+  color: rgb(67, 157, 187);
+  background-color: white;
+  border-color: rgb(67, 157, 187);;
+  border-width: 2px;
+  padding: .3cm;
+  font-size: 100%;
+  display: block;
+  margin: auto auto;
+}

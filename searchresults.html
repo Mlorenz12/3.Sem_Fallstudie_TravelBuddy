@@ -96,6 +96,16 @@
 
 
 
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <!-- Modal body -->
+          <!-- Modal footer -->
+        </div>
+      </div>
+    </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
@@ -309,6 +319,67 @@
       autocompletesprache(document.getElementById("language2"), sprachen);
     </script>
 
+<script type="application/javascript">
+  var name = "Hannah Weber";
+  var desti = "Italien";
+  var time ="1.1.1.1.1.1";
+  var flex = "2 days"
+  var gender = "Div";
+  var living = "57572";
+  var prevj = 0;
+  var age = 12;
+  var lang = "None"
+  var facebook = "Hannah Weber"
+  var insta = "hannediehenne"
+  var twitter = "Hannah Weber"
+  createmodal(name, desti, time, flex, gender, living, prevj, age, lang, facebook, insta, twitter)
+
+  function createmodal(name, desti, time, flex, gender, living, prevj, age, lang, facebook, inst, twitter)
+      {
+      var modalcontent = $('.modal-content');
+      var header = $("<div/>").addClass("modal-header");
+      var headertitel = $("<h3/>").addClass("modal-title");
+      headertitel.append("Listing from " + name);
+      var headerbutton = '<button type="button" class="close" data-dismiss="modal">×</button>';
+      header.append(headertitel, headerbutton);
+
+      var modalbody = $("<div/>").addClass("modal-body");
+      var row = $("<div/>").addClass("row");
+      var col1 = $("<div/>").addClass("col-lg-7 col-md-7 col-sm-7");
+      var col2 = $("<div/>").addClass("col-lg-4 col-md-4 col-sm-4 column2");
+      col1.append("Destination: " , desti, '<br>');
+      col1.append("Time span: " , time, '<br>');
+      col1.append("Flexibility: " , flex, '<br>');
+      col1.append('<h5 id="persinfo">Personal information</h5>');
+      col1.append("Gender: " , gender, '<br>');
+      col1.append("Living in: " , living, '<br>');
+      col1.append("Previous journeys: " , prevj, '<br>');
+      col1.append("Age: " , age,'<br>');
+      col1.append("Languages: ", lang)
+
+      var socmed1 = $("<div/>").addClass("row socmed");
+      socmed1.append('<img src="pics/fbicon.png" alt="" class="socmedicon">');
+      socmed1.append(facebook, '<br>');
+      var socmed2 = $("<div/>").addClass("row socmed");
+      socmed2.append('<img src="pics/instaicon.png" alt="" class="socmedicon">');
+      socmed2.append(insta);
+      var socmed3 = $("<div/>").addClass("row socmed");
+      socmed3.append('<img src="pics/twittericon.png" alt="" class="socmedicon">');
+      socmed3.append(twitter);
+      var profilbutton = '<a href="nonexistent.html"><button class="btn btn-primary btn-sm regformore">Go to profile</button></a>'
+      col2.append(socmed1, socmed2, socmed3, profilbutton);
+
+      var rowcols = $("<div/>").addClass("row");
+      rowcols.append(col1, col2)
+      modalbody.append(rowcols);
+
+      var footer = '<div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>'
+      modalcontent.append(header, modalbody, footer);
+              
+      }
+</script>
+
+
 <script>
   //function called at start
   $(function(){
@@ -392,10 +463,13 @@
 
       var cardText=$("<p/>").addClass("card-text");
       cardText.append(text);
+
+      var mehr = '<div class="row d-flex justify-content-end""><a href="#" data-toggle="modal" data-target="#myModal">Read more...</a></div>'
       
       nurtext.append(cardTitle);
       nurtext.append(cardInfo);
       nurtext.append(cardText);
+      nurtext.append(mehr)
 
       col.append(cardPic)
       col2.append(nurtext)
@@ -404,14 +478,9 @@
 
 
         return cardBody;
-      
-
-      
+            
   }
-
-
 </script>
-
   
 </body>
 </html>
