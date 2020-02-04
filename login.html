@@ -66,7 +66,7 @@
         var korrekt
         console.log(e_mail, passwort)
         
-        $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=bjoernsreise",function(response)
+        $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=bjoernsreise2",function(response)
 						  {
 							$.each(response,function(index,data)
 							{
@@ -79,8 +79,10 @@
 							});
               
               if (Boolean(korrekt)){
-                alert('Der Login war korrekt!')
-                //anmelden(e_mail)
+                document.cookie = "current="+e_mail
+                alert('Der Login war korrekt!'+ document.cookie)
+                
+                window.open("Start.html","_self")
               }
               else {
                 alert('Der Login war nicht korrekt!');
