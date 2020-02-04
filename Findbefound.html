@@ -7,17 +7,18 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
 
-    <title>NOCHÄNDERN</title>
+    <title>Find and be found</title>
 
     <link rel="stylesheet" href="Findbefound.css">
 
 </head>
 
 <body>
-<div class="bg">
+<div class="bg" style="font-family: 'Montserrat';">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-logo" href="#"><img src="pics/logo.jpg"></a>
@@ -39,7 +40,7 @@
     </nav>
 
   <div class="container">
-      <div class="row" style="width: inherit; margin-top: 1cm; margin-bottom: 2cm;">
+      <div class="row" style="width: inherit; margin-top: 1cm; margin-bottom: 1cm;">
         <div class="col">
           <h1>Search for your travelbuddy</h1>
         </div>
@@ -47,8 +48,8 @@
       <div class="row pl-3 pr-3" style="margin-top: .6cm;">
         <div class="offset-lg-4 offset-md-4 offset-sm-3 offset-xs-4 col-lg-4 col-md-4 col-sm-6 col-xs-4">
           <div class="row">
-            <img src="pics/plus.jpg" style="height: 40px; width: 40px;" alt="">
-            <p style="font-size: 140%; padding-left: 10px; margin-bottom: 0;">Create your own</p>
+              <img src="pics/plus.jpg" style="height: 40px; width: 40px;" alt="">
+              <a href="newtravplan.html" style="color: black"><p style="font-size: 140%; padding-left: 10px; margin-bottom: 0;">Create your own</p></a>
           </div>
         </div>
       </div>
@@ -57,7 +58,7 @@
           <label for="montharriv">Month of arrival</label><br>
           <div class="row" style="margin: 0;">
             <img src="pics\flight.svg.png" class="travelicons" alt="Flugzeug-Icon">
-            <input type="month" name="montharriv" language="english" id="montharriv" class="form-control bildtext">
+            <input type="month" name="montharriv" id="montharriv" class="form-control bildtext">
           </div>
         </div>
         <div class="col-lg-4 pl-3 pr-3">
@@ -105,18 +106,31 @@
       <div class="row">
         <div class="col-lg-4">
           <label for="age">Age</label><br>
-          <section class="range-slider" id="age">
+          <section class="range-slider form-control d-flex align-items-start justify-content-center" style="height: 1cm; padding-top: 0;" id="age">
             <span class="rangeValues"></span>
-            <input value="20" min="18" max="80" step="1" type="range" id="minalter">
-            <input value="35" min="18" max="80" step="1" type="range" id="maxalter">
-          </section>  
+            <input type="range" value="25"min="18" max="80" step="1" type="range" id="minalter" class="custom-range">
+            <input type="range" value="40" min="18" max="80" step="1" type="range" id="maxalter" class="custom-range">
+          </section>
+
         </div>
         <div class="col-lg-4">
           <label for="gender">Preferred gender</label><br>
-          <div class="checks form-control">
-            <input type="checkbox" name="gender" style="border: red solid;" id="gender" value="male" class="">Männlich</button>
-            <input type="checkbox" name="gender" id="gender" value="female" class="">Weiblich</input>
-            <input type="checkbox" name="gender" id="gender" value="div" class="">Divers</input>
+          <div class="checks form-control d-flex justify-content-between align-items-center">
+            <div class="col">
+              <div class="row align-items-center">
+                <input type="checkbox" name="gender" style="border: red solid;" id="gender" value="male" class="">Männlich</button>              
+              </div>
+            </div>
+            <div class="col">
+              <div class="row align-items-center">
+                <input type="checkbox" name="gender" id="gender" value="female" class="">Weiblich</input>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row align-items-center" >
+                <input type="checkbox" name="gender" id="gender" value="div" class="">Divers</input>
+              </div>
+            </div>
           </div>
         </div>
         

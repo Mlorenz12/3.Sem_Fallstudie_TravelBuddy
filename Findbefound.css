@@ -146,7 +146,7 @@ label {
     background-color: white;
     border: 1px solid #ced4da;;
     border-radius: .25rem;
-    width: max-content;
+    width: 100%;
 }
 
 .sprachen {
@@ -158,7 +158,7 @@ label {
 /*AB HIER SLIDER*/
 section.range-slider {
     position: relative;
-    width: 200px;
+    width: 100%;
     height: 35px;
     text-align: center;
 }
@@ -169,7 +169,7 @@ section.range-slider input {
     overflow: hidden;
     left: 0;
     top: 15px;
-    width: 200px;
+    width: 100%;
     outline: none;
     height: 18px;
     margin: 0;
@@ -217,3 +217,21 @@ section.range-slider input:last-of-type::-moz-range-track {
     text-align: center;
     margin: 0;
   }
+
+  #age {
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+  }
+
+
+input[type=range]::-webkit-slider-thumb {
+    background: rgb(67, 157, 187);
+}
+input[type=range]::-moz-range-thumb {
+    background: rgb(67, 157, 187);
+}
+input[type=range]::-ms-thumb {
+    background: rgb(67, 157, 187);
+}

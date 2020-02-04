@@ -88,12 +88,13 @@ input {
 }
 
 .checks {
-    vertical-align: auto;
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ced4da;
-    border-radius: .25re;
-    width: max-content;
+  background-color: white;
+  border: 1px solid #ced4da;;
+  border-radius: .25rem;
+  width: 100%;
+  font-size: smaller;
+  padding-left: 5px;
+  padding-right: 0;
 }
 
 label {
@@ -221,7 +222,7 @@ section.range-slider input:last-of-type::-moz-range-track {
 }
 
 .balken {
-    background-color: rgb(158, 218, 238);
+    background-color: rgb(67, 157, 187, 0.5);
 }
 
 .balkenoben {
@@ -302,11 +303,9 @@ section.range-slider input:last-of-type::-moz-range-track {
   #gender {
     padding-top: 1%;
     padding-bottom: 1%;
-    padding-right: .2%;
-    padding-left: .2%;
     width: fit-content;
+    font-weight: 50%;
   }
-
 
   .socmedicon {
     width: 35px;
@@ -352,4 +351,18 @@ section.range-slider input:last-of-type::-moz-range-track {
   font-size: 100%;
   display: block;
   margin: auto auto;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: rgb(67, 157, 187);
+}
+input[type=range]::-moz-range-thumb {
+  background: rgb(67, 157, 187);
+}
+input[type=range]::-ms-thumb {
+  background: rgb(67, 157, 187);
+}
+
+.readmore {
+  font-size: smaller;
 }
