@@ -63,7 +63,7 @@ ul {
   width: 100%;
   color: white;
   background-color: lightblue;
-  border: 1px cadetblue;
+  border: 1px rgb(67, 157, 187);
   border-radius: .8cm;
   padding-top: 1%;
   padding-bottom: 1%;
@@ -97,4 +97,13 @@ ul {
 .loginpic {
   width: 18%;
   align-self: center;
+}
+
+.leisteuntenlogo {
+  width: 10%;
+}
+
+.leisteuntentext {
+  text-align: center;
+  margin: 0;
 }
