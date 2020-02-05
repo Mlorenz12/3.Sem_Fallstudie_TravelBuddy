@@ -380,7 +380,6 @@ input[type=range]::-ms-thumb {
 }
 
 .btn-primary {
-  padding-right: 10%;
   background-color: rgb(67, 157, 187);
   border-color: rgb(67, 157, 187);
 }
