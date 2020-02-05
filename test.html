@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="createprofile.css">
+
+    <title>NOCHÄNDERN</title>
+
+    <style>
+        .socmedicon {
+            width: 35px;
+        }
+
+        .profile {
+            font-weight: 500;
+            border-radius: 1cm;
+            color: rgb(67, 157, 187);
+            background-color: white;
+            border-color: rgb(67, 157, 187);;
+            border-width: 2px;
+            padding: .3cm;
+            font-size: 100%;
+            display: block;
+            margin: auto auto;
+        }
+    </style>
+
+</head>
+
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-logo logo" href="#"><img src="pics/logo.jpg"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto nav-fill w-100" style="font-size: large;">
+                <li class="nav-item"><a class="nav-link" href="Start.html">Start</a></li>
+                <li class="nav-item aktiv"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="Findbefound.html">Find and be found</a></li>
+                <li class="nav-item"><a class="nav-link" href="Community.html">Community</a></li>
+                <li class="nav-item"><a class="nav-link" href="Help.html">Help</a></li>
+                <li class="nav-item konto">
+                
+                <a href="login.html"><img src="pics/login.png" class="loginpic"></a></li>
+            </ul>
+            
+            </div>
+        </nav>
+        <div class="container">
+            <h2>Modal Scroll Example</h2>
+            <!-- Button to Open the Modal -->
+            <a href="#" data-toggle="modal" data-target="#myModal">Read more...</a>
+          
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Modal Header -->
+                  <!-- Modal body -->
+                  <!-- Modal footer -->
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<script type="application/javascript">
+    var name = "Hannah Weber";
+    var desti = "Italien";
+    var time ="1.1.1.1.1.1";
+    var flex = "2 days"
+    var gender = "Div";
+    var living = "57572";
+    var prevj = 0;
+    var age = 12;
+    var lang = "None"
+    var facebook = "Hannah Weber"
+    var insta = "hannediehenne"
+    var twitter = "Hannah Weber"
+    createmodal(name, desti, time, flex, gender, living, prevj, age, lang, facebook, insta, twitter)
+
+    function createmodal(name, desti, time, flex, gender, living, prevj, age, lang, facebook, inst, twitter)
+        {
+        var modalcontent = $('.modal-content');
+        var header = $("<div/>").addClass("modal-header");
+        var headertitel = $("<h3/>").addClass("modal-title");
+        headertitel.append("Listing from " + name);
+        var headerbutton = '<button type="button" class="close" data-dismiss="modal">×</button>';
+        header.append(headertitel, headerbutton);
+
+        var modalbody = $("<div/>").addClass("modal-body");
+        var row = $("<div/>").addClass("row");
+        var col1 = $("<div/>").addClass("col-lg-1 col-md-5 col-sm-5");
+        var col2 = $("<div/>").addClass("col-lg-1 col-md-3 col-sm-3");
+        col1.append("Destination: " , desti, '<br>');
+        col1.append("Time span: " , time, '<br>');
+        col1.append("Flexibility: " , flex, '<br>');
+        col1.append('<h3 id="persinfo">Personal information</h3>');
+        col1.append("Gender: " , gender, '<br>');
+        col1.append("Living in: " , living, '<br>');
+        col1.append("Previous journeys: " , prevj, '<br>');
+        col1.append("Age: " , age,'<br>');
+        col1.append("Languages: ", lang)
+
+        var socmed1 = $("<div/>").addClass("row");
+        socmed1.append('<img src="pics/fbicon.png" alt="" class="socmedicon">');
+        socmed1.append(facebook, '<br>');
+        var socmed2 = $("<div/>").addClass("row");
+        socmed2.append('<img src="pics/instaicon.png" alt="" class="socmedicon">');
+        socmed2.append(insta);
+        var socmed3 = $("<div/>").addClass("row");
+        socmed3.append('<img src="pics/twittericon.png" alt="" class="socmedicon">');
+        socmed3.append(twitter);
+        var profilbutton = '<a href="nonexistent.html"><button class="btn btn-primary regformore">Go to profile</button></a>'
+        col2.append(socmed1, socmed2, socmed3, profilbutton);
+
+        var rowcols = $("<div/>").addClass("row");
+        rowcols.append(col1, col2)
+        modalbody.append(rowcols);
+
+        var footer = '<div class="modal-footer"><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button></div>'
+        modalcontent.append(header, modalbody, footer);
+                
+        }
+</script>
+    
+</body>
+</html>
