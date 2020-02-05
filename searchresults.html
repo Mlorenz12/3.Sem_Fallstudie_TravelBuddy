@@ -451,7 +451,16 @@
               }
               else {
                 col2.append(cardDiv);	
-              }	
+              }
+              
+              if ((col1.children().length-3)%4 == 0) {
+                var cardDiv=createwerbung()
+                col1.append(cardDiv)
+              }
+              else if ((col2.children().length-1)%4 == 0) {
+                var cardDiv=createwerbung()
+                col2.append(cardDiv)
+              }
             });
       }
   }
@@ -499,8 +508,19 @@
       cardContent.append(col, col2);
       cardBody.append(cardContent);
 
-
         return cardBody;
+            
+  }
+
+  function createwerbung()
+  {
+    var werbung = '<img id="Werbungsbild" src="pics/skyscanner.jpg" />';
+    var cardwerbung=$("<div/>").addClass("card-werbung d-flex justify-content-center");
+    var cardBody=$("<div/>").addClass("card-body d-flex justify-content-center");
+    cardwerbung.append(werbung);
+    cardBody.append(cardwerbung);
+
+    return cardBody;
             
   }
 </script>
