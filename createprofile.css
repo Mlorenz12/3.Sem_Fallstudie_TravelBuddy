@@ -81,3 +81,94 @@ li {
        width: 80%;
        margin-left: 5px;
    }
+  
+   .btn-primary {
+    font-weight: bold;
+    margin-bottom: 10%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 40px;
+    padding-left: 40px;
+    background-color: rgb(67, 157, 187);
+    border-color: rgb(67,157,187);
+    font-weight: 500;
+}
+
+   .sprachen {
+    margin-right: 0px!important;
+}
+
+   .autocomplete {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.autocompletesprachen {
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid lightgrey;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+.autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  
+  /*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: rgb(67, 157, 187) !important; 
+    color: #ffffff; 
+  }
+
+
+  #country {
+    width: 100%;
+  }
+
+  #placeholderimg {
+    background-image: url(pics/placeholder.png);
+    background-size: cover;
+    width: 208px;
+    height: 208px;
+    border: 1px solid black;
+    margin-bottom: auto;
+  }
+
+  .btn-secondary {
+    font-weight: bold;
+    margin-bottom: 10%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: 500;
+}
+
+.browsedoc {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+::placeholder {
+  font-size: smaller;
+}
+
+#buttonzwei {
+  margin-bottom: 0;
+}
