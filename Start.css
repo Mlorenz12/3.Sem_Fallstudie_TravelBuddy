@@ -85,7 +85,7 @@ ul {
         background-image: url(pics/Hintergrund60.jpg);
         height: 50%; 
     
-        background-position: center;
+        background-position: left;
         background-repeat: no-repeat;
         background-size: cover;
 }
@@ -110,6 +110,7 @@ ul {
     padding-right: .5cm;
     padding-left: .5cm;
     background-color: rgb(67, 157, 187);
+    border-color: rgb(67,157,187);
     font-weight: 500;
 }
 
@@ -175,10 +176,18 @@ margin-bottom: 20%;
 
 
 .leisteuntenlogo {
-  width: 10%;
+  width: 3%;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .leisteuntentext {
   text-align: center;
   margin: 0;
+}
+
+.ganzunten {
+  font-size: smaller;
+  margin-bottom: 0;
+  padding: 5px;
 }

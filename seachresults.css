@@ -88,12 +88,13 @@ input {
 }
 
 .checks {
-    vertical-align: auto;
-    width: 100%;
-    background-color: white;
-    border: 1px solid #ced4da;
-    border-radius: .25re;
-    width: max-content;
+  background-color: white;
+  border: 1px solid #ced4da;;
+  border-radius: .25rem;
+  width: 100%;
+  font-size: smaller;
+  padding-left: 5px;
+  padding-right: 0;
 }
 
 label {
@@ -221,7 +222,7 @@ section.range-slider input:last-of-type::-moz-range-track {
 }
 
 .balken {
-    background-color: rgb(158, 218, 238);
+    background-color: rgb(67, 157, 187, 0.5);
 }
 
 .balkenoben {
@@ -230,6 +231,14 @@ section.range-slider input:last-of-type::-moz-range-track {
     margin-bottom: 5px;
     margin-left: 8px;
     margin-right: 8px;
+}
+
+.balkenobenbtn {
+  width: 416px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .red {
@@ -256,8 +265,8 @@ section.range-slider input:last-of-type::-moz-range-track {
   }
 
   .card-werbung {
-    border-bottom: lightgray solid .5px;
-    width: 500px;
+    width: 100%;
+    height: 97px;
     margin-right: 5px;
     margin-left: 5px;
     margin-top: 5px;
@@ -273,7 +282,7 @@ section.range-slider input:last-of-type::-moz-range-track {
   }
 
   #Werbungsbild {
-    width: 80%;
+    width: 100%;
   }
 
   .card-text {
@@ -293,7 +302,7 @@ section.range-slider input:last-of-type::-moz-range-track {
     max-width: 1300px;
   }
 
-  #leisteoben {
+  .leisteoben {
     padding-right: 10%;
     padding-left: 10%;
     padding-top: 10px;
@@ -302,11 +311,9 @@ section.range-slider input:last-of-type::-moz-range-track {
   #gender {
     padding-top: 1%;
     padding-bottom: 1%;
-    padding-right: .2%;
-    padding-left: .2%;
     width: fit-content;
+    font-weight: 50%;
   }
-
 
   .socmedicon {
     width: 35px;
@@ -352,4 +359,28 @@ section.range-slider input:last-of-type::-moz-range-track {
   font-size: 100%;
   display: block;
   margin: auto auto;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background: rgb(67, 157, 187);
+}
+input[type=range]::-moz-range-thumb {
+  background: rgb(67, 157, 187);
+}
+input[type=range]::-ms-thumb {
+  background: rgb(67, 157, 187);
+}
+
+.readmore {
+  font-size: smaller;
+}
+
+.dropdown:hover .dropdwn {
+  background-color: rgb(67, 157, 187);
+}
+
+.btn-primary {
+  padding-right: 10%;
+  background-color: rgb(67, 157, 187);
+  border-color: rgb(67, 157, 187);
 }

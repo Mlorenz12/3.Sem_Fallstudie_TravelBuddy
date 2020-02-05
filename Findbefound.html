@@ -7,10 +7,14 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
 
-    <title>FindBeFound</title>
+
+    <title>Find and be found</title>
+
+  
 
     <link rel="stylesheet" href="Findbefound.css">
 
@@ -83,7 +87,7 @@
 </head>
 
 <body>
-<div class="bg">
+<div class="bg" style="font-family: 'Montserrat';">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-logo" href="#"><img src="pics/logo.jpg"></a>
@@ -105,7 +109,7 @@
     </nav>
 
   <div class="container">
-      <div class="row" style="width: inherit; margin-top: 1cm; margin-bottom: 2cm;">
+      <div class="row" style="width: inherit; margin-top: 1cm; margin-bottom: 1cm;">
         <div class="col">
           <h1>Search for your travelbuddy</h1>
         </div>
@@ -113,8 +117,10 @@
       <div class="row pl-3 pr-3" style="margin-top: .6cm;">
         <div class="offset-lg-4 offset-md-4 offset-sm-3 offset-xs-4 col-lg-4 col-md-4 col-sm-6 col-xs-4">
           <div class="row">
-            <a href="newtravplan.html"><img src="pics/plus.jpg" style="height: 40px; width: 40px;" alt=""></a>
-            <p style="font-size: 140%; padding-left: 10px; margin-bottom: 0;" >Create your own</p>
+
+              <img src="pics/plus.jpg" style="height: 40px; width: 40px;" alt="">
+              <a href="newtravplan.html" style="color: black"><p style="font-size: 140%; padding-left: 10px; margin-bottom: 0;">Create your own</p></a>
+
           </div>
         </div>
       </div>
@@ -123,7 +129,7 @@
           <label for="montharriv">Month of arrival</label><br>
           <div class="row" style="margin: 0;">
             <img src="pics\flight.svg.png" class="travelicons" alt="Flugzeug-Icon">
-            <input type="month" name="montharriv" language="english" id="montharriv" class="form-control bildtext">
+            <input type="month" name="montharriv" id="montharriv" class="form-control bildtext">
           </div>
         </div>
         <div class="col-lg-4 pl-3 pr-3">
@@ -151,19 +157,22 @@
           <select name="reiseart" id="reiseart" class="form-control">
               <option value="" disabled selected hidden>Choose</option>
               <option value="backpack">Backpacking</option>
-              <option value="allinclusive">All inclusive</option>
-              <option value="roadtrip">Roadtrip</option>
-              <option value="rest">NOCH WAS?</option>
+              <option value="wellness">Wellness</option>
+              <option value="sporty">Sporty</option>
+              <option value="cultural">Cultural</option>
+              <option value="everything">A bit of everything</option>
           </select>
         </div>              
         <div class="col-lg-3 pl-3 pr-3">
           <label for="budget">Your budget</label>
           <select name="budget" id="budget" class="form-control dropdwn">
             <option value="" disabled selected hidden>Budget per day (in USD)</option>
-            <option value="preisstufe1">0 - 50 $</option>
-            <option value="preisstufe2"> 51 - 100 $</option>
-            <option value="preisstufe3">101 - 150 $</option>
-            <option value="preisstufe4">> 150 $</option>
+            <option value="preisstufe1">&lt30$</option>
+            <option value="preisstufe2">&lt50$</option>
+            <option value="preisstufe3">&lt100$</option>
+            <option value="preisstufe4">&lt150$</option>
+            <option value="preisstufe5">&lt200$</option>
+            <option value="preisstufe6">&gt200$</option>
         </select>
         </div>              
       </div>
@@ -171,18 +180,33 @@
       <div class="row">
         <div class="col-lg-4">
           <label for="age">Age</label><br>
-          <section class="range-slider" id="age">
+          <section class="range-slider form-control d-flex align-items-start justify-content-center" style="height: 1cm; padding-top: 0;" id="age">
             <span class="rangeValues"></span>
-            <input value="20" min="18" max="80" step="1" type="range" id="minalter">
-            <input value="35" min="18" max="80" step="1" type="range" id="maxalter">
-          </section>  
+            <input type="range" value="25"min="18" max="80" step="1" type="range" id="minalter" class="custom-range">
+            <input type="range" value="40" min="18" max="80" step="1" type="range" id="maxalter" class="custom-range">
+          </section>
+
         </div>
         <div class="col-lg-4">
           <label for="gender">Preferred gender</label><br>
-          <div class="checks form-control">
-            <input type="checkbox" name="gender" style="border: red solid;" id="male" value="male" class="" checked>Männlich</input>
-            <input type="checkbox" name="gender" id="female" value="female" class="" checked>Weiblich</input>
-            <input type="checkbox" name="gender" id="div" value="div" class="" checked>Divers</input>
+
+          <div class="checks form-control d-flex justify-content-between align-items-center">
+            <div class="col">
+              <div class="row align-items-center">
+                <input type="checkbox" name="gender" id="male" value="male" class="">Männlich</button>              
+              </div>
+            </div>
+            <div class="col">
+              <div class="row align-items-center">
+                <input type="checkbox" name="gender" id="female" value="female" class="">Weiblich</input>
+              </div>
+            </div>
+            <div class="col">
+              <div class="row align-items-center" >
+                <input type="checkbox" name="gender" id="div" value="div" class="">Other</input>
+              </div>
+            </div>
+
           </div>
         </div>
         
@@ -204,21 +228,24 @@
       </div>
 
     </div>
-    <div class="container">
-      <div class="row" style="margin: 0; padding: 0;">
-        <div class="col-lg-3 col-md-3 col-sm-5">
+    <div class="container" style="margin-top: 8%;">
+      <div class="row d-flex justify-content-center align-items-center" style="margin: 0; padding: 0;">
+        <div class="col-lg-3 col-md-3 col-sm-8" style="margin-bottom: 2%;">
           <h5 class="leisteuntentext" style="margin-bottom: 10px;">Contact us</h5>
           <p class="leisteuntentext">travelbuddy</p>
           <p class="leisteuntentext">hello@travelbuddy.com</p>
           <p class="leisteuntentext">+1 800 000000</p>
         </div>
-        <div class="offset-lg-5 col-lg-3 offset-md-5 col-md-3 col-sm-5" style="margin-bottom: 5%;">
+        <div class="col-lg-6 col-md-6 col-sm-8 d-flex justify-content-center align-items-end" style="margin-bottom: 2%;">
+          <p class="copyright leisteuntentext" style="color: lightgray;">© 2019 by travelbuddy</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-8" style="margin-bottom: 2%;">
           <h5 class="leisteuntentext" style="margin-bottom: 10px;">Follow us</h5> <br>
           <div class="d-flex justify-content-center">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/googleicon.png" alt="">
             <img class="leisteuntentext leisteuntenlogo" src="pics/fbicon.png" alt="">
-            <img class="leisteuntentext leisteuntenlogo" src="pics/fbicon.png" alt="">
-            <img class="leisteuntentext leisteuntenlogo" src="pics/fbicon.png" alt="">
-            <img class="leisteuntentext leisteuntenlogo" src="pics/fbicon.png" alt="">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/twittericon.png" alt="">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/instaicon.png" alt="">
           </div>
         </div>
       </div>
@@ -429,7 +456,7 @@
         });
       }
       
-      var sprachen = ["Englisch", "Mandarin-Chinesisch", "Hindi", "Spanisch", "Arabisch", "Französisch", "Urdu", "Bengalisch", "Russisch", "Portugiesisch", "Malaiisch", "Panjabi", "Deutsch", "Persisch", "Japanisch", "Suaheli", "Marath", "Telugu", "Wu-Chinesisch", "Tamil", "Türkisch", "Vietnamesisch", "Koreanisch", "Kantonesisch", "Italienisch", "Javanisch", "Hausa", "Thai", "Gujarati", "Bhojpuri"];
+      var sprachen = ['Abkhazian','Afar','Afrikaans','Akan','Albanian','Amharic','Arabic','Aragonese','Armenian','Assamese','Avaric','Avestan','Aymara','Azerbaijani','Bambara','Bashkir','Basque','Belarusian','Bengali','Bihari languages','Bislama','Bosnian','Breton','Bulgarian','Burmese','Catalan, Valencian','Central Khmer','Chamorro','Chechen','Chichewa','Chinese','Chuvash','Cornish','Corsican','Cree','Croatian','Czech','Danish','Divehi, Dhivehi, Maldivian','Dutch', 'Flemish','Dzongkha','English','Esperanto','Estonian','Ewe','Faroese','Fijian','Finnish','French','Fulah','Gaelic','Galician','Ganda','Georgian','German','Gikuyu', 'Kikuyu','Greek','Greenlandic, Kalaallisut','Guarani','Gujarati','Haitian', 'Haitian Creole','Hausa','Hebrew','Herero','Hindi','Hiri Motu','Hungarian','Icelandic','Ido','Igbo','Indonesian','Inuktitut','Inupiaq','Irish','Italian','Japanese','Javanese','Kannada','Kanuri','Kashmiri','Kazakh','Kinyarwanda','Komi','Kongo','Korean','Kwanyama','Kurdish','Kyrgyz','Lao','Latin','Latvian','Luxembourgish','Limburgan','Lingala','Lithuanian','Luba-Katanga','Macedonian','Malagasy','Malay','Malayalam','Maltese','Manx','Maori','Marathi','Marshallese','Moldavian', 'Romanian','Mongolian','Nauru','Navajo', 'Navaho','Northern Ndebele','Ndonga','Nepali','Northern Sami','Norwegian','Nuosu', 'Sichuan Yi','Occitan','Ojibwa','Oriya','Oromo','Ossetian', 'Ossetic','Pali','Panjabi', 'Punjabi','Pashto', 'Pushto','Persian','Polish','Portuguese','Quechua','Romansh','Rundi','Russian','Samoan','Sango','Sanskrit','Sardinian','Serbian','Shona','Sindhi','Sinhala','Sinhalese','Slovak','Slovenian','Somali','Sotho, Southern','South Ndebele','Spanish, Castilian','Sundanese','Swahili','Swati','Swedish','Tagalog','Tahitian','Tajik','Tamil','Tatar','Telugu','Thai','Tibetan','Tigrinya','Tonga (Tonga Islands)','Tsonga','Tswana','Turkish','Turkmen','Twi','Uighur, Uyghur','Ukrainian','Urdu','Uzbek','Venda','Vietnamese','Volap_k','Walloon','Welsh','Western Frisian','Wolof','Xhosa','Yiddish','Yoruba','Zhuang, Chuang','Zulu'];
       
       autocompletesprache(document.getElementById("language1"), sprachen);
       autocompletesprache(document.getElementById("language2"), sprachen);

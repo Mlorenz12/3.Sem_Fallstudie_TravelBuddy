@@ -7,16 +7,17 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-    <title>NOCHÄNDERN</title>
+    <title>Register</title>
     
     <link rel="stylesheet" href="registrieren.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 
-<body>
+<body style="font-family: 'Montserrat';">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-logo" href="#"><img src="pics/logo.jpg"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,11 +35,10 @@
       </ul>
       
     </div>
-</nav>
+  </nav>
         
       <div class="container">
       
-      <form action="" class="" >
         <div class="row" style="width: inherit;">
           <div class="col">
             <h1 style="text-align: center; margin: 6mm;">Welcome to travelbuddy!</h1>
@@ -55,13 +55,30 @@
             <input type="password" name="password" id="passwordconf" class="form-control reginput" placeholder="Confirm Password" required>  
           </div>              
         </div>
-      </form>
-
-          <button type="submit" class="submitreg" onClick="registrieren()">Register now</button>
-          <input type="submit" name="submitbutton" class="submitreg" id="submit form" onClick="registrieren()" value="Register now">
-
+        <button type="submit" class="submitreg" onClick="registrieren()">Register now</button>       
     </div>
-  </div>
+    <div class="container" style="margin-top: 8%;">
+      <div class="row d-flex justify-content-center align-items-center" style="margin: 0; padding: 0;">
+        <div class="col-lg-3 col-md-3 col-sm-8" style="margin-bottom: 2%;">
+          <h5 class="leisteuntentext" style="margin-bottom: 10px;">Contact us</h5>
+          <p class="leisteuntentext">travelbuddy</p>
+          <p class="leisteuntentext">hello@travelbuddy.com</p>
+          <p class="leisteuntentext">+1 800 000000</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-8 d-flex justify-content-center align-items-end" style="margin-bottom: 2%;">
+          <p class="copyright leisteuntentext" style="color: lightgray;">© 2019 by travelbuddy</p>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-8" style="margin-bottom: 2%;">
+          <h5 class="leisteuntentext" style="margin-bottom: 10px;">Follow us</h5> <br>
+          <div class="d-flex justify-content-center">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/googleicon.png" alt="">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/fbicon.png" alt="">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/twittericon.png" alt="">
+            <img class="leisteuntentext leisteuntenlogo" src="pics/instaicon.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- first Tether, then Bootstrap JS. -->
     
@@ -166,5 +183,5 @@
 						});
       }
     </script>
-</body>
+</body style="font-family: 'Montserrat';">
 </html>

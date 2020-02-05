@@ -62,7 +62,7 @@ ul {
 .submitreg {
   width: 100%;
   color: white;
-  background-color: lightblue;
+  background-color: rgb(67, 157, 187);
   border: 1px rgb(67, 157, 187);
   border-radius: .8cm;
   padding-top: 1%;
@@ -72,11 +72,12 @@ ul {
 
 .reginput {
   width: 100%;
+  background-color: rgb(67, 157, 187, 0.4);
   border-radius: 0.6cm;
-  border-color: lightgrey;
+  border-color: rgb(67, 157, 187);
   border-width: thin;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -101,9 +102,10 @@ ul {
 
 .leisteuntenlogo {
   width: 10%;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .leisteuntentext {
   text-align: center;
-  margin: 0;
 }
