@@ -130,12 +130,13 @@
               console.log(schonda,"schonda")
 							$.each(response,function(index,keys)
 							{
-                console.log(keys, aMail)
-                console.log(Boolean(keys['key'] === aMail), "mail gleich")
-                //das eine ist ein json das andere ein string
+                // console.log(keys, aMail)
+                // console.log(Boolean(keys['key'] === aMail), "mail gleich")
+                // das eine ist ein json das andere ein string
                 if (keys['key'] === aMail){
                     schonda = "true"
                     console.log("hast schon einen Account fucker")
+                    return false
                 }
 							});
               

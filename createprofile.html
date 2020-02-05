@@ -7,14 +7,15 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="createprofile.css">
 
-    <title>NOCHÄNDERN</title>
+    <title>Create profile</title>
 
 </head>
 
-<body>
+<body style="font-family: 'Montserrat';">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <a class="navbar-logo logo" href="#"><img src="pics/logo.jpg"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,13 +25,11 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto nav-fill w-100" style="font-size: large;">
               <li class="nav-item"><a class="nav-link" href="Start.html">Start</a></li>
-              <li class="nav-item aktiv"><a class="nav-link" href="#">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">About</a></li>
               <li class="nav-item"><a class="nav-link" href="Findbefound.html">Find and be found</a></li>
               <li class="nav-item"><a class="nav-link" href="Community.html">Community</a></li>
               <li class="nav-item"><a class="nav-link" href="Help.html">Help</a></li>
-              <li class="nav-item konto">
-                
-                <a href="login.html"><img src="pics/login.png" class="loginpic"></a></li>
+              <li class="nav-item konto"><a href="login.html"><img src="pics/Avatar.png" class="loginpic"></a></li>
             </ul>
             
           </div>
@@ -42,10 +41,7 @@
           </div>
         </div>
         <div class="row" >
-            <div class="col-lg-2">
-                <input type="text" name="email" id="email" class="form-control" style=" height: 5cm; margin-top: .5cm;" placeholder="PLACEHOLDER" required>
-            </div>
-            <div class="col-lg-10">
+            <div class="col-lg-9 col-md-12">
                 <div class="row">
                     <div class="col-lg-6 pl-3 pr-3">
                         <label for="namen">Your name</label>
@@ -53,19 +49,55 @@
                     </div>
                     <div class="col-lg-6 pl-3 pr-3">
                         <label for="gebdate">Your birthday</label>
-                      <input type="text" name="gebdate" id="gebdate" class="form-control" placeholder="MM/DD/YYYY" required> <!-- Ami Format -->
+                      <input type="text" name="gebdate" id="gebdate" class="form-control" placeholder="DD/MM/YY" required>  
                     </div>              
                   </div>
                   <div class="row">
                     <div class="col-lg-6 pl-3 pr-3">
-                        <label for="county">Which country are you from?</label>
-                      <input type="text" name="country" id="country" class="form-control" required>  
+                        <label for="county">Which country are you from?</label><br>
+                        <div class="autocomplete" autocomplete="off">
+                          <input id="country" type="text" Placeholder="Country" class="form-control" name="destination">
+                        </div>
                     </div>
                     <div class="col-lg-6 pl-3 pr-3">
                         <label for="city">Your city</label>
                       <input type="text" name="city" id="city" class="form-control" required>  
                     </div>              
                   </div>
+                  <div class="row">
+                    <div class="col-lg-6 pl-3 pr-3">
+                      <label for="gender">Your gender</label><br>
+                      <div class="checks form-control d-flex justify-content-between align-items-center">
+                        <div class="col">
+                          <div class="row align-items-center">
+                            <input type="radio" name="gender" id="gender" value="male" class="">Männlich</button>              
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="row align-items-center">
+                            <input type="radio" name="gender" id="gender" value="female" class="">Weiblich</input>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="row align-items-center" >
+                            <input type="radio" name="gender" id="gender" value="div" class="">Other</input>
+                          </div>
+                        </div>
+                      </div>            
+                    </div>
+                    <div class="col-lg-6 pl-3 pr-3" autocomplete="off">
+                      <label for="language1">Your languages</label><br>
+                      <div class="row" style="margin-left: 0; margin-right: 0;">
+                        <div class="col autocompletesprachen">
+                          <input id="language1" type="text" class="form-control sprachen" name="language1" placeholder="1st language">
+                        </div>
+                        <div class="col autocompletesprachen">
+                          <input id="language2" type="text" class="form-control sprachen" name="language2" placeholder="2nd language">
+                        </div>
+                      </div>
+                    </div>
+              
+                    </div>
                   <div class="row">
                     <div class="col-lg-4 pl-3" style="margin-top: 0.85%;">
                       <label for="facebook">Any social media?</label>
@@ -94,9 +126,28 @@
                     </div>
                   </div>
             </div>
+            <div class="col-lg-3 col-md-12">
+              <div class="col-lg-12 d-flex justify-content-center">
+                <div id="placeholderimg" onclick=newwindow() class="d-flex justify-content-center align-items-end browsedoc">
+                  <button type="button" class="btn btn-secondary btn-sm">Browse...</button>
+                </div>
+              </div>
+              <div class="col-lg-12 d-flex justify-content-center align-items-center">
+                <div class="row d-flex justify-content-center align-items-center browsedoc">
+                  <input type="text" placeholder="Upload verification document" class="justify-content-center align-items-center">
+                  <div class="d-flex justify-content-center align-items-center">
+                    <button type="button" onclick=newwindow() class="btn btn-secondary btn-sm" id="buttonzwei">Browse...</button>
+                  </div>
+                </div>                
+              </div>
+
+                <div class="row d-flex justify-content-center">
+                  <a href="Start.html"><button type="button" class="btn btn-primary btn-sm" style="margin-bottom: auto;">Save</button></a>
+                </div>
+
+            </div>
         </div>
       </div>
-      <button onclick="StringBilden()">Submit your personal Info</button>
 
 
     <!-- Optional JavaScript -->
@@ -104,6 +155,161 @@
     <!--<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <script> //AUTOCOMPLETE Länder
+      function autocompleteland(inp, arr) {
+        var currentFocus;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
+              }
+            }
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+      }
+      
+      var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua & Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia & Herzegovina","Botswana","Brazil","British Virgin Islands","Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Central Arfrican Republic","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica","Cote D Ivoire","Croatia","Cuba","Curacao","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana","Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kiribati","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Myanmar","Namibia","Nauro","Nepal","Netherlands","Netherlands Antilles","New Caledonia","New Zealand","Nicaragua","Niger","Nigeria","North Korea","Norway","Oman","Pakistan","Palau","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre & Miquelon","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","St Kitts & Nevis","St Lucia","St Vincent","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Turks & Caicos","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
+      
+      autocompleteland(document.getElementById("country"), countries);
+    </script>
+
+    <script> //AUTOCOMPLETE Sprachen
+      function autocompletesprache(inp, arr) {
+        var currentFocus;
+        inp.addEventListener("input", function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value;
+                    closeAllLists();
+                });
+                a.appendChild(b);
+              }
+            }
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if (e.keyCode == 13) {
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          /*a function to classify an item as "active":*/
+          if (!x) return false;
+          /*start by removing the "active" class on all items:*/
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+              x[i].parentNode.removeChild(x[i]);
+            }
+          }
+        }
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+      }
+      
+      var sprachen = ['Abkhazian','Afar','Afrikaans','Akan','Albanian','Amharic','Arabic','Aragonese','Armenian','Assamese','Avaric','Avestan','Aymara','Azerbaijani','Bambara','Bashkir','Basque','Belarusian','Bengali','Bihari languages','Bislama','Bosnian','Breton','Bulgarian','Burmese','Catalan, Valencian','Central Khmer','Chamorro','Chechen','Chichewa','Chinese','Chuvash','Cornish','Corsican','Cree','Croatian','Czech','Danish','Divehi, Dhivehi, Maldivian','Dutch', 'Flemish','Dzongkha','English','Esperanto','Estonian','Ewe','Faroese','Fijian','Finnish','French','Fulah','Gaelic','Galician','Ganda','Georgian','German','Gikuyu', 'Kikuyu','Greek','Greenlandic, Kalaallisut','Guarani','Gujarati','Haitian', 'Haitian Creole','Hausa','Hebrew','Herero','Hindi','Hiri Motu','Hungarian','Icelandic','Ido','Igbo','Indonesian','Inuktitut','Inupiaq','Irish','Italian','Japanese','Javanese','Kannada','Kanuri','Kashmiri','Kazakh','Kinyarwanda','Komi','Kongo','Korean','Kwanyama','Kurdish','Kyrgyz','Lao','Latin','Latvian','Luxembourgish','Limburgan','Lingala','Lithuanian','Luba-Katanga','Macedonian','Malagasy','Malay','Malayalam','Maltese','Manx','Maori','Marathi','Marshallese','Moldavian', 'Romanian','Mongolian','Nauru','Navajo', 'Navaho','Northern Ndebele','Ndonga','Nepali','Northern Sami','Norwegian','Nuosu', 'Sichuan Yi','Occitan','Ojibwa','Oriya','Oromo','Ossetian', 'Ossetic','Pali','Panjabi', 'Punjabi','Pashto', 'Pushto','Persian','Polish','Portuguese','Quechua','Romansh','Rundi','Russian','Samoan','Sango','Sanskrit','Sardinian','Serbian','Shona','Sindhi','Sinhala','Sinhalese','Slovak','Slovenian','Somali','Sotho, Southern','South Ndebele','Spanish, Castilian','Sundanese','Swahili','Swati','Swedish','Tagalog','Tahitian','Tajik','Tamil','Tatar','Telugu','Thai','Tibetan','Tigrinya','Tonga (Tonga Islands)','Tsonga','Tswana','Turkish','Turkmen','Twi','Uighur, Uyghur','Ukrainian','Urdu','Uzbek','Venda','Vietnamese','Volap_k','Walloon','Welsh','Western Frisian','Wolof','Xhosa','Yiddish','Yoruba','Zhuang, Chuang','Zulu'];
+      
+      autocompletesprache(document.getElementById("language1"), sprachen);
+      autocompletesprache(document.getElementById("language2"), sprachen);
+    </script>
+
+    <script>
+      function newwindow() {
+        window.open("nonexistent.html")
+      }
+    </script>#
 
 <script type="application/javascript">
       console.log(document.cookie, "Hier stehen alle Cookies")
@@ -131,7 +337,7 @@
         }
       }
 
-  function StringBilden(){
+    function StringBilden(){
     // aMail = document.getElementById("email").value;
     aName = document.getElementById("namen").value;
     aBday = Date.parse(document.getElementById("gebdate").value);
@@ -142,8 +348,8 @@
     aTW = document.getElementById("twitter").value;
     //Sprache und Geschlecht fehlen noch
     //Hier hartcodiert
-    aGender = "male"
-    aLangue = ["English", "Spanish"]
+    aGender = document.getElementById("gender").value;
+    aLangue = [document.getElementById("language1").value,document.getElementById("language2").value]
     console.log(aBday)
     if (isNaN(aBday)) {
       alert("That is not a valid Birthday. Try again")
@@ -151,16 +357,16 @@
     else{
       Nutzerinfo() 
     }
-  }
+    }
 
-  function Nutzerinfo(){
+    function Nutzerinfo(){
 
       $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=bjoernsreise2",function(response)
         { 
           alert(user)
           $.each(response,function(index,keys)
           {
-            console.log(keys["key"])
+            // console.log(keys["key"])
             if (keys["key"]== user){
               aJSONString = keys["jsonstring"]
               return false
@@ -178,10 +384,12 @@
             {
               console.log(response);
             });
+            window.open("Start.html","_self")
           }
+          
         );
-      
-  }
+  
+}
 
 </script>
     

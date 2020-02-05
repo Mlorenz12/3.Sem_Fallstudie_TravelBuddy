@@ -10,9 +10,75 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     
 
-    <title>NOCHÄNDERN</title>
+    <title>FindBeFound</title>
 
     <link rel="stylesheet" href="Findbefound.css">
+
+    <script>
+      var month
+      var days
+      var country
+      var city
+      var reiseart
+      var budget
+      var alter
+      var gender
+      var langu
+
+      function filtern(){
+        month = document.getElementById("montharriv").value;
+        month = new Date(month)
+        month = month.getUTCFullYear()+"-"+month.getUTCMonth()
+        days = document.getElementById("days").value;
+        country = document.getElementById("country").value;
+        city = document.getElementById("city").value;
+        reiseart = document.getElementById("reiseart").value;
+        budget = document.getElementById("budget").value;
+        langu = [document.getElementById("language1").value, document.getElementById("language2").value]
+        alter = [3.154e10*document.getElementById("minalter").value, 3.154e10*document.getElementById("maxalter").value]
+        
+        gender = [document.getElementById("male").value,document.getElementById("female").value,document.getElementById("div").value]
+
+        //console.log(month, days, country, city, reiseart, budget, langu, alter, gender)
+        var FilterString = {"Alter":alter, "Sprachen":langu, "Reiseziel":[country, city], "Budget":budget, "Gender":gender, "Zeit":[month, days, ],"Reiseart":reiseart}
+        console.log(FilterString)
+        PassendSuchen(FilterString)
+        //window.open("searchresults.html","_self")
+      }
+
+      function PassendSuchen(FilterString){
+        $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=bjoernsreise5/Reise",function(response)
+        {
+          
+          $.each(response,function(index,keys)
+            {
+              if (keys["jsonstring"]["Alter"]) { //nötig weil noch unvollständige Strings drin sind
+                if(FilterString["Alter"][0] <= keys["jsonstring"]["Alter"] && keys["jsonstring"]["Alter"] <= FilterString["Alter"][1]){
+                  if(keys["jsonstring"]["Sprachen"].includes(FilterString["Sprachen"][0]) || keys["jsonstring"]["Sprachen"].includes(FilterString["Sprachen"][1])){
+                    if(keys["jsonstring"]["Reiseziel"].includes(FilterString["Reiseziel"][0])){
+                      if(keys["jsonstring"]["Budget"] == FilterString["Budget"] || FilterString["Budget"] == ""){
+                        if(FilterString["Gender"].includes(keys["jsonstring"]["Gender"]) || FilterString["Gender"] == [,,]){
+                          if(FilterString["Reiseart"] == "" || keys["jsonstring"]["Reiseart"] == FilterString["Reiseart"]){
+                            if(FilterString["Zeit"][0] == keys["jsonstring"]["Zeit"][0]|| FilterString["Zeit"][0] == "NaN-NaN"){
+                              var Time1 = keys["jsonstring"]["Zeit"][1] - parseInt(keys["jsonstring"]["Zeit"][2])
+                              var Time2 = keys["jsonstring"]["Zeit"][1] + parseInt(keys["jsonstring"]["Zeit"][2])
+                              if(FilterString["Zeit"][1] == ""||(Time1 <= FilterString["Zeit"][1] && FilterString["Zeit"][1] <= Time2)){
+                                console.log(keys["jsonstring"]) // wird noch nicht auf Städten gecheckt und entweder kein Datum oder bestimmter Monat + Jahr
+                              }
+                            } 
+                          }
+                        }
+                      } 
+                    }
+                  }
+                }
+              }
+              
+            });
+          
+          })
+      }
+    </script>
 
 </head>
 
@@ -47,8 +113,8 @@
       <div class="row pl-3 pr-3" style="margin-top: .6cm;">
         <div class="offset-lg-4 offset-md-4 offset-sm-3 offset-xs-4 col-lg-4 col-md-4 col-sm-6 col-xs-4">
           <div class="row">
-            <img src="pics/plus.jpg" style="height: 40px; width: 40px;" alt="">
-            <p style="font-size: 140%; padding-left: 10px; margin-bottom: 0;">Create your own</p>
+            <a href="newtravplan.html"><img src="pics/plus.jpg" style="height: 40px; width: 40px;" alt=""></a>
+            <p style="font-size: 140%; padding-left: 10px; margin-bottom: 0;" >Create your own</p>
           </div>
         </div>
       </div>
@@ -114,9 +180,9 @@
         <div class="col-lg-4">
           <label for="gender">Preferred gender</label><br>
           <div class="checks form-control">
-            <input type="checkbox" name="gender" style="border: red solid;" id="gender" value="male" class="">Männlich</button>
-            <input type="checkbox" name="gender" id="gender" value="female" class="">Weiblich</input>
-            <input type="checkbox" name="gender" id="gender" value="div" class="">Divers</input>
+            <input type="checkbox" name="gender" style="border: red solid;" id="male" value="male" class="" checked>Männlich</input>
+            <input type="checkbox" name="gender" id="female" value="female" class="" checked>Weiblich</input>
+            <input type="checkbox" name="gender" id="div" value="div" class="" checked>Divers</input>
           </div>
         </div>
         
@@ -134,7 +200,7 @@
       </div>
 
       <div class="d-flex justify-content-center">
-        <button type="button" class="btn btn-primary btn-sm suchen" onClick="suchen()"><a href="searchresults.html" style="color: white;">Search</a></button>
+        <button type="button" class="btn btn-primary btn-sm suchen" onClick="filtern()"><a style="color: white;">Search</a></button>
       </div>
 
     </div>
@@ -180,6 +246,8 @@
         var langu2 = document.getElementById("language2").value;
 
         console.log(month, days, country, city, reiseart, budget, minalter, maxalter, gender, langu1, langu2)
+
+
       
         //Achtung: Keinerlei Überprüfung der Eingaben! Kann ich noch einbauen
         //Aber bitte nochmal absprechen

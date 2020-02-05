@@ -38,7 +38,7 @@
   <div class="container">
     <div class="col-lg-10" style="margin-left: auto; margin-right: auto;">
   
-      <form action="" class="" >
+      
         <div class="row" style="width: inherit;">
           <div class="col">
             <h1 style="text-align: center; margin: 6mm;">Welcome to travelbuddy!</h1>
@@ -51,7 +51,7 @@
           <input type="password" name="password" id="password" class="form-control reginput" placeholder="Password (min. 8 characters)" required>  
         </div>
         <button class="submitreg" onClick="login()">Login</button>
-      </form>
+
     </div>
   </div>
 
@@ -85,6 +85,7 @@
         var e_mail = document.getElementById("email").value
         var passwort = document.getElementById("password").value
         var korrekt
+        var profil
         console.log(e_mail, passwort)
         
         $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=bjoernsreise2",function(response)
@@ -95,6 +96,8 @@
 
                   if (data['jsonstring']['login']['Passwort'] === passwort){
                     korrekt = "true";
+
+                    profil = data['jsonstring'].hasOwnProperty('info')
                   }
                 }
 							});
@@ -102,8 +105,12 @@
               if (Boolean(korrekt)){
                 document.cookie = "current="+e_mail
                 alert('Der Login war korrekt!'+ document.cookie)
-                
-                window.open("Start.html","_self")
+                if (profil){
+                  window.open("Start.html","_self")
+                }
+                else{
+                  window.open("createprofile.html","_self")
+                }
               }
               else {
                 alert('Der Login war nicht korrekt!');
