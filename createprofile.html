@@ -309,7 +309,90 @@
       function newwindow() {
         window.open("nonexistent.html")
       }
+
     </script>
+
+<script type="application/javascript">
+      console.log(document.cookie, "Hier stehen alle Cookies")
+      // var aMail = document.getElementById("email").value;
+      var aName
+      var aBday
+      var aCountry
+      var aCity
+      var aFB
+      var aIG
+      var aTW
+      var aGender
+      var aLangue
+
+      //Variablen für den Abruf
+      var aJSONString
+      var user
+      var ca = document.cookie.split(';');
+
+      for(var i = 0; i <ca.length; i++) {
+                
+        if(ca[i].startsWith("current=")){
+          user = ca[i].split("=")[1]
+          break;
+        }
+      }
+
+    function StringBilden(){
+    // aMail = document.getElementById("email").value;
+    aName = document.getElementById("namen").value;
+    aBday = Date.parse(document.getElementById("gebdate").value);
+    aCountry = document.getElementById("country").value;
+    aCity = document.getElementById("city").value;
+    aFB = document.getElementById("facebook").value;
+    aIG = document.getElementById("instagram").value;
+    aTW = document.getElementById("twitter").value;
+    //Sprache und Geschlecht fehlen noch
+    //Hier hartcodiert
+    aGender = document.getElementById("gender").value;
+    aLangue = [document.getElementById("language1").value,document.getElementById("language2").value]
+    console.log(aBday)
+    if (isNaN(aBday)) {
+      alert("That is not a valid Birthday. Try again")
+    }
+    else{
+      Nutzerinfo() 
+    }
+    }
+
+    function Nutzerinfo(){
+
+      $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=bjoernsreise2",function(response)
+        { 
+          alert(user)
+          $.each(response,function(index,keys)
+          {
+            // console.log(keys["key"])
+            if (keys["key"]== user){
+              aJSONString = keys["jsonstring"]
+              return false
+            }
+          });
+
+          aJSONString["info"] = {"Name":aName,"Bday":aBday,"Gender":aGender,"Sprachen":aLangue, "Country":aCountry, "City":aCity, "FB":aFB, "IG": aIG, "TW":aTW}
+        
+        })
+        .done(
+          function(){
+            $.getJSON("https://webtechlecture.appspot.com/cloudstore/add?owner=bjoernsreise2"+
+            "&key="+user+"&jsonstring="+[encodeURIComponent(JSON.stringify(aJSONString))],
+            function(response)
+            {
+              console.log(response);
+            });
+            window.open("Start.html","_self")
+          }
+          
+        );
+  
+}
+
+</script>
 
     
 </body s>

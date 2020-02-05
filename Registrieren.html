@@ -142,17 +142,18 @@
 
       function pruefen(aMail, aPassw, schonda) {
         
-        $.getJSON("https://webtechlecture.appspot.com/cloudstore/listkeys?owner=bjoernsreise",function(response)
+        $.getJSON("https://webtechlecture.appspot.com/cloudstore/listkeys?owner=bjoernsreise2",function(response)
 						  {
               console.log(schonda,"schonda")
 							$.each(response,function(index,keys)
 							{
-                console.log(keys, aMail)
-                console.log(Boolean(keys['key'] === aMail), "mail gleich")
-                //das eine ist ein json das andere ein string
+                // console.log(keys, aMail)
+                // console.log(Boolean(keys['key'] === aMail), "mail gleich")
+                // das eine ist ein json das andere ein string
                 if (keys['key'] === aMail){
                     schonda = "true"
                     console.log("hast schon einen Account fucker")
+                    return false
                 }
 							});
               
@@ -170,13 +171,14 @@
         
         console.log("hast noch keinen Account")
         var aJSONString = {"login":{"Email":aMail,"Passwort":aPassw}}
-        $.getJSON("https://webtechlecture.appspot.com/cloudstore/add?owner=bjoernsreise"+
+        $.getJSON("https://webtechlecture.appspot.com/cloudstore/add?owner=bjoernsreise2"+
 					  "&key="+aMail+"&jsonstring="+[encodeURIComponent(JSON.stringify(aJSONString))],
 					  function(response)
 					  {
 						console.log(response);
-            alert('Danke für Ihre Anmeldung!');
-						
+            document.cookie = "current="+aMail
+            alert('Danke für Ihre Anmeldung!'+document.cookie);
+						window.open("createprofile.html", "_self")
 						
 						});
       }

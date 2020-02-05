@@ -15,6 +15,117 @@
 
     <link rel="stylesheet" href="newtravplan.css">
 
+    <script>
+      var Info //JSONObjekt mit allen Userinfos nach der Skriptausführung
+      var by = document.cookie.split("=")[1] //Der eingeloggte Benutzer
+      console.log(by)
+      var month
+      var days
+      var country
+      var city
+      var reiseart
+      var budget
+      var flex
+      //Die folgenden Daten kommen aus der Info Variable
+      var alter
+      var gender
+      var langu
+
+      function Zwischenablage(date1, date2){
+        var Tage = (date2.getTime() - date1.getTime())/ (1000*3600*24)
+        days = Tage
+        month = date1.getFullYear()+"-"+date1.getMonth() //es wird nur der Abreisemonat gespeichert nicht der Endmonat
+        console.log(Tage, month)
+      }
+      function suchen(){
+        
+        country = document.getElementById("country").value;
+        city = document.getElementById("city").value;
+        reiseart = document.getElementById("reiseart").value;
+        budget = document.getElementById("budget").value;
+        flex = document.getElementById("flexi").value;
+
+        console.log(country,city,reiseart,budget, flex, by)
+        
+        GetUserDaten()
+       
+      }
+      function GetUserDaten(){
+        $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=bjoernsreise2",function(response)
+        {
+          $.each(response,function(index,keys)
+            {
+
+              if(keys["key"] == by){
+                Info = keys["jsonstring"]["info"]
+
+                alter   = Info["Bday"]
+                gender  = Info["Gender"]
+                langu  = Info["Sprachen"]
+                alert(alter, gender, langu)
+                ReiseSpeichern()
+                return false // Die Daten des Users wurden abgerufen
+              }
+
+                    
+            });
+          
+          });
+          
+      }
+      //übergebene Variablen noch anlegen
+      function ReiseSpeichern(){
+        var aJSONString = {"Reiseziel":[country,city],"Zeit":[month, days, flex],"Alter":alter,"Reiseart":reiseart,"Budget":budget,"Sprachen":langu,"Gender":gender,"By":by}
+        $.getJSON("https://webtechlecture.appspot.com/cloudstore/add?owner=bjoernsreise5/Reise"+
+        "&jsonstring="+[encodeURIComponent(JSON.stringify(aJSONString))],
+					  function(response)
+					  {
+						console.log(response);
+            console.log(response["message"].split("key=")[1])
+            
+            if (response["status"]=="ok"){
+              alert('Dein Travelbuddy wird dich schon bald anschreiben '+ by +'!');
+              ErstellteReiseSpeichern(response["message"].split("key=")[1],by);
+            }
+						});
+      }
+
+      function ErstellteReiseSpeichern(aKey,user){
+
+        $.getJSON("https://webtechlecture.appspot.com/cloudstore/listobjects?owner=bjoernsreise2",function(response)
+        {
+          
+          $.each(response,function(index,keys)
+            {
+
+              if(keys["key"] == user){
+                var aJSONString = keys["jsonstring"]
+
+                if (aJSONString["Reisen"]){
+                  aJSONString["Reisen"].push(aKey)
+                }
+                else{
+                  aJSONString["Reisen"] = [aKey]
+                }
+                
+                $.getJSON("https://webtechlecture.appspot.com/cloudstore/add?owner=bjoernsreise2"+"&key="+user+
+                          "&jsonstring="+[encodeURIComponent(JSON.stringify(aJSONString))],
+                          function(response)
+                          {console.log(response)});
+                return false // an dieser Stelle ist die Reise gespeichert und die ID beim User selbst abrufbar
+              }
+
+                    
+            });
+          
+          }).done( function(){
+            alert("Vielleicht findest du ja auch schon passende Angebote")//später rausnehmen
+            window.open("searchresults.html","_self")
+            });
+
+      }
+    </script>
+
 </head>
 
 <body style="font-family: 'Montserrat';">
@@ -98,6 +209,7 @@
           </div>
 
         </div>
+
         <div class="row">
           <div class="col-lg-12 pl-3 pr-3">
             <label for="gender">Preferred gender</label><br>
@@ -113,6 +225,7 @@
               </div>
             </div>
           </div>
+
         </div>
 
         <div class="row d-flex justify-content-center" id="buttonrow">
@@ -135,7 +248,12 @@
       "endDate": "02/03/2020"
         },
     function(start, end, label) {
-      console.log(start.format('YYYY-MM-DD') + end.format('YYYY-MM-DD'));
+      console.log(start.format('MM-DD-YYYY') + end.format(' MM-DD-YYYY'));
+      //Erzeugt Datetime-Objekte
+      var date1 = new Date(start.format('MM-DD-YYYY'))
+      var date2 = new Date(end.format(' MM-DD-YYYY'))
+
+      Zwischenablage(date1, date2)
     });
   });
 </script>
