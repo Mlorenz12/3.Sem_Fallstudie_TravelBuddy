@@ -104,3 +104,13 @@ ul {
   border-color: red;
   border-width: medium;
 }
+
+.leisteuntenlogo {
+  width: 10%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.leisteuntentext {
+  text-align: center;
+}
