@@ -366,3 +366,7 @@ input[type=range]::-ms-thumb {
 .readmore {
   font-size: smaller;
 }
+
+.dropdown:hover .dropdwn {
+  background-color: rgb(67, 157, 187);
+}

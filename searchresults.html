@@ -50,11 +50,21 @@
               <select name="reiseart" id="reiseart" class="form-control balkenoben">
                 <option value="" disabled selected hidden>Kind of journey</option>
                 <option value="backpack">Backpacking</option>
-                <option value="allinclusive">All inclusive</option>
-                <option value="roadtrip">Roadtrip</option>
-                <option value="rest">NOCH WAS?</option>
+                <option value="wellness">Wellness</option>
+                <option value="sporty">Sporty</option>
+                <option value="cultural">Cultural</option>
+                <option value="everything">A bit of everything</option>
               </select>
-            <input type="number" name="budget" id="budget" class="form-control balkenoben" Placeholder="Budget">
+              <select name="budget" id="budget" class="form-control dropdwn balkenoben">
+                <option value="" disabled selected hidden>Budget per day (in USD)</option>
+                <option value="preisstufe1">&lt30$</option>
+                <option value="preisstufe2">&lt50$</option>
+                <option value="preisstufe3">&lt100$</option>
+                <option value="preisstufe4">&lt150$</option>
+                <option value="preisstufe5">&lt200$</option>
+                <option value="preisstufe6">&gt200$</option>
+            </select>
+
             <section class="range-slider form-control balkenoben" style="height: 1cm; padding-top: 0;" id="age">
               <span class="rangeValues"></span>
               <input type="range" value="25"min="18" max="80" step="1" type="range" id="minalter" class="custom-range">
@@ -84,6 +94,9 @@
                 <input id="language2" type="text" class="form-control sprachen" name="language2" Placeholder="Language">
               </div>
             </div>
+          </div>
+          <div class="row">
+            
           </div>
         </div>
     </div>
