@@ -176,10 +176,18 @@ margin-bottom: 20%;
 
 
 .leisteuntenlogo {
-  width: 10%;
+  width: 3%;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .leisteuntentext {
   text-align: center;
   margin: 0;
+}
+
+.ganzunten {
+  font-size: smaller;
+  margin-bottom: 0;
+  padding: 5px;
 }
