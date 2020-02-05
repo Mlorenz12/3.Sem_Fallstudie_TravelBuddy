@@ -233,6 +233,14 @@ section.range-slider input:last-of-type::-moz-range-track {
     margin-right: 8px;
 }
 
+.balkenobenbtn {
+  width: 416px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
 .red {
     background-color: red;
     color: red;
@@ -294,7 +302,7 @@ section.range-slider input:last-of-type::-moz-range-track {
     max-width: 1300px;
   }
 
-  #leisteoben {
+  .leisteoben {
     padding-right: 10%;
     padding-left: 10%;
     padding-top: 10px;
@@ -369,4 +377,10 @@ input[type=range]::-ms-thumb {
 
 .dropdown:hover .dropdwn {
   background-color: rgb(67, 157, 187);
+}
+
+.btn-primary {
+  padding-right: 10%;
+  background-color: rgb(67, 157, 187);
+  border-color: rgb(67, 157, 187);
 }

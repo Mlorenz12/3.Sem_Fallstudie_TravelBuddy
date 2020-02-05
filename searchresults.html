@@ -39,66 +39,65 @@
     </nav>
 
     <div>
-        <div class="row balken d-flex justify-content-center" id="leisteoben">
-          <div class="row d-flex justify-content-center align-items-center"  style="width: 100%">
-              <input type="month" name="montharriv" id="montharriv" class="form-control bildtext balkenoben ">
-              <input type="number" name="days" id="days" Placeholder="Flexibility" class="form-control bildtext balkenoben">
-              <div class="autocomplete" autocomplete="off">
-                <input id="country" type="text" Placeholder="Country" class="form-control balkenoben" name="destination">
-              </div>
-              <input type="text" name="city" id="city" class="form-control balkenoben" placeholder="City">  
-              <select name="reiseart" id="reiseart" class="form-control balkenoben">
-                <option value="" disabled selected hidden>Kind of journey</option>
-                <option value="backpack">Backpacking</option>
-                <option value="wellness">Wellness</option>
-                <option value="sporty">Sporty</option>
-                <option value="cultural">Cultural</option>
-                <option value="everything">A bit of everything</option>
-              </select>
-              <select name="budget" id="budget" class="form-control dropdwn balkenoben">
-                <option value="" disabled selected hidden>Budget per day (in USD)</option>
-                <option value="preisstufe1">&lt30$</option>
-                <option value="preisstufe2">&lt50$</option>
-                <option value="preisstufe3">&lt100$</option>
-                <option value="preisstufe4">&lt150$</option>
-                <option value="preisstufe5">&lt200$</option>
-                <option value="preisstufe6">&gt200$</option>
+      <div class="row balken d-flex justify-content-center leisteoben">
+      <div class="row d-flex justify-content-center align-items-center"  style="width: 100%">
+            <input type="month" name="montharriv" id="montharriv" class="form-control bildtext balkenoben ">
+            <input type="number" name="days" id="days" Placeholder="Flexibility" class="form-control bildtext balkenoben">
+            <div class="autocomplete" autocomplete="off">
+              <input id="country" type="text" Placeholder="Country" class="form-control balkenoben" name="destination">
+            </div>
+            <input type="text" name="city" id="city" class="form-control balkenoben" placeholder="City">  
+            <select name="reiseart" id="reiseart" class="form-control balkenoben">
+              <option value="" disabled selected hidden>Kind of journey</option>
+              <option value="backpack">Backpacking</option>
+              <option value="wellness">Wellness</option>
+              <option value="sporty">Sporty</option>
+              <option value="cultural">Cultural</option>
+              <option value="everything">A bit of everything</option>
             </select>
+            <select name="budget" id="budget" class="form-control dropdwn balkenoben">
+              <option value="" disabled selected hidden>Budget per day (in USD)</option>
+              <option value="preisstufe1">&lt30$</option>
+              <option value="preisstufe2">&lt50$</option>
+              <option value="preisstufe3">&lt100$</option>
+              <option value="preisstufe4">&lt150$</option>
+              <option value="preisstufe5">&lt200$</option>
+              <option value="preisstufe6">&gt200$</option>
+          </select>
 
-            <section class="range-slider form-control balkenoben" style="height: 1cm; padding-top: 0;" id="age">
-              <span class="rangeValues"></span>
-              <input type="range" value="25"min="18" max="80" step="1" type="range" id="minalter" class="custom-range">
-              <input type="range" value="40" min="18" max="80" step="1" type="range" id="maxalter" class="custom-range">
-            </section>
-              <div class="checks form-control d-flex justify-content-between align-items-center balkenoben" style="width: 200px;">
-                <div class="col">
-                  <div class="row align-items-center">
-                    <input type="checkbox" name="gender" id="gender" value="male" class="">Male</button>              
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="row align-items-center">
-                    <input type="checkbox" name="gender" id="gender" value="female" class="">Female</input>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="row align-items-center" >
-                    <input type="checkbox" name="gender" id="gender" value="div" class="">Other</input>
-                  </div>
+          <section class="range-slider form-control balkenoben" style="height: 1cm; padding-top: 0;" id="age">
+            <span class="rangeValues"></span>
+            <input type="range" value="25"min="18" max="80" step="1" type="range" id="minalter" class="custom-range">
+            <input type="range" value="40" min="18" max="80" step="1" type="range" id="maxalter" class="custom-range">
+          </section>
+            <div class="checks form-control d-flex justify-content-between align-items-center balkenoben" style="width: 200px;">
+              <div class="col">
+                <div class="row align-items-center">
+                  <input type="checkbox" name="gender" id="gender" value="male" class="">Male</button>              
                 </div>
               </div>
-              <div class="autocompletesprachen balkenoben" autocomplete="off" style="width: 200px;">
-                <input id="language1" type="text" class="form-control sprachen" name="language1" Placeholder="Language">
+              <div class="col">
+                <div class="row align-items-center">
+                  <input type="checkbox" name="gender" id="gender" value="female" class="">Female</input>
+                </div>
               </div>
-              <div class="autocompletesprachen balkenoben">
-                <input id="language2" type="text" class="form-control sprachen" name="language2" Placeholder="Language">
+              <div class="col">
+                <div class="row align-items-center" >
+                  <input type="checkbox" name="gender" id="gender" value="div" class="">Other</input>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="row">
-            
-          </div>
+            <div class="autocompletesprachen balkenoben" autocomplete="off" style="width: 200px;">
+              <input id="language1" type="text" class="form-control sprachen" name="language1" Placeholder="Language">
+            </div>
+            <div class="autocompletesprachen balkenoben">
+              <input id="language2" type="text" class="form-control sprachen" name="language2" Placeholder="Language">
+            </div>
+            <div class="d-flex justify-content-center balkenobenbtn">
+              <a href="searchresults.html"><button type="button" class="btn btn-primary btn-sm">Search</button></a>
+            </div>
         </div>
+      </div>
     </div>
             
     <div id="container" class="container d-flex justify-content-around">
